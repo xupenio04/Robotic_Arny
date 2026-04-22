@@ -17,9 +17,8 @@ class omxKinematicClass():
     def forward_kinematics(self, theta1, theta2, theta3, theta4, theta5, theta6):
         T01 = hm.R_z(theta1) @ hm.T_xyz(0, 0, self.l1)
         T12 = hm.R_x(theta2) @ hm.T_xyz(0, 0, self.l2)
-        T23 = hm.R_y(theta3) @ hm.T_xyz(self.l3, 0, 0)
-        # T34 = hm.R_y(theta4) @ hm.T_xyz(self.l4, 0, 0)
-
-        
-
-        return T01 @ T12 @ T23
+        T23 = hm.R_z(theta3) @ hm.T_xyz(self.l3, -self.l4, 0)
+        T34 = hm.R_z(theta4) @ hm.T_xyz(self.l5, 0, 0)
+        # T45 = hm.R_y(theta5) @ hm.T_xyz(self.l6, 0, 0)  
+    
+        return T01 @ T12 @ T23 @ T34 

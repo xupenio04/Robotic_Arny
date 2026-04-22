@@ -125,7 +125,7 @@ def test_with_your_angles():
     robot = ok.omxKinematicClass(l1, l2, l3, l4, l5, l6)
     
     # Your angles (note: you need 6 angles, you provided 5)
-    your_angles = [0, np.pi/2, 0, 0, np.pi/4, 0]  # Added 0 for the 6th joint
+    your_angles = [0, np.pi/2, 0, 0, np.pi/2, 0]  # Added 0 for the 6th joint
     
     print(f"Testing with angles (degrees): {your_angles}")
     
