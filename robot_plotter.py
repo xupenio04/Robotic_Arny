@@ -109,24 +109,19 @@ class omxPlotterClass():
 def test_with_your_angles():
     """Test with your specific angles [0, 45, -45, -90, 45]"""
     
-    print("\n" + "="*50)
-    print("TESTING WITH YOUR SPECIFIC ANGLES")
-    print("="*50)
-    
     # Define robot link lengths (adjust these to match your robot)
-    l1 = 1
-    l2 = 1
-    l3 = 1
-    l4 = 1
-    l5 = 1
-    l6 = 1
-    l7 = 1
+    l1 = 40
+    l2 = 44.5
+    l3 = 113.2
+    l4 = 41.5
+    l5 = 162
+    l6 = 43.2
+    l7 = 80.5
     
     # Create robot instance
     robot = ok.omxKinematicClass(l1, l2, l3, l4, l5, l6, l7)
     
-    # Your angles (note: you need 6 angles, you provided 5)
-    your_angles = [0, np.pi/2, 0, 0, -np.pi/2, 0]  # Added 0 for the 6th joint
+    your_angles = [0, 0, 0, np.pi/4, 0]  
     
     print(f"Testing with angles (degrees): {your_angles}")
     
@@ -134,23 +129,15 @@ def test_with_your_angles():
     result = robot.forward_kinematics(*your_angles)
     
     # Debug information
-    print(f"\nReturn type: {type(result)}")
     if isinstance(result, np.ndarray):
         print(f"Matrix shape: {result.shape}")
         print(f"\nTransformation matrix:")
         print(result)
-    elif isinstance(result, list):
-        print(f"List length: {len(result)}")
-        for i, item in enumerate(result):
-            print(f"Item {i}: type={type(item)}")
-            if isinstance(item, tuple):
-                print(f"  Tuple length: {len(item)}")
-            elif isinstance(item, np.ndarray):
-                print(f"  Matrix shape: {item.shape}")
-    
+
     # Prepare transforms for plotting
     if isinstance(result, np.ndarray) and result.shape == (4,4):
         transforms = [(result, "End Effector")]
+
     elif isinstance(result, list):
         if len(result) > 0 and isinstance(result[0], tuple):
             transforms = result
@@ -164,7 +151,8 @@ def test_with_your_angles():
                 if isinstance(item, np.ndarray) and item.shape == (4,4):
                     transforms.append((item, f"Frame {i+1}"))
                 else:
-                    print(f"Unexpected item {i}: {type(item)}")
+                    print(f"Unexpected item {i}: {type(item)}") 
+
     else:
         print("Cannot interpret the return value for plotting")
         return
@@ -178,10 +166,6 @@ def main(args=None):
     Main function to validate the kinematics implementation.
     Run different validation tests.
     """
-    
-    print("=" * 50)
-    print("ROBOT KINEMATICS VALIDATION SUITE")
-    print("=" * 50)
     
     test_with_your_angles()
 
