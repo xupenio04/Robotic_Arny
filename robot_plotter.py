@@ -121,13 +121,13 @@ def test_with_your_angles():
     # Create robot instance
     robot = ok.omxKinematicClass(l1, l2, l3, l4, l5, l6, l7)
     
-    your_angles = [0, 0, 0, np.pi/4, 0]  
+    your_angles = [0.78539815,  1.93086212, -0.95438512,  1.02167603,  0]  
     
     print(f"Testing with angles (degrees): {your_angles}")
     
     # Get the transformation result
     result = robot.forward_kinematics(*your_angles)
-    
+    print(result)
     # Debug information
     if isinstance(result, np.ndarray):
         print(f"Matrix shape: {result.shape}")
@@ -161,12 +161,39 @@ def test_with_your_angles():
     plotter = omxPlotterClass()
     plotter.plot_robot(transforms)
 
+def test_inverse():
+
+    l1 = 40
+    l2 = 44.5
+    l3 = 113.2
+    l4 = 41.5
+    l5 = 162
+    l6 = 43.2
+    l7 = 80.5
+
+    robot = ok.omxKinematicClass(l1,l2,l3,l4,l5,l6,l7)
+
+    # Pose desejada do tool tip
+    T_target = np.array([
+        [1,0,0,24],
+        [0,1,0,24],
+        [0,0,1,414],
+        [0,0,0,1]
+    ])
+
+    # IK resolve
+    q_sol = ok.inverse_kinematics(robot, T_target)
+
+    print("Ângulos encontrados:")
+    print(q_sol)
+
 def main(args=None):
     """
     Main function to validate the kinematics implementation.
     Run different validation tests.
     """
     
+    # test_inverse()
     test_with_your_angles()
 
 
