@@ -4,6 +4,10 @@ import math
 
 import homogeneous_matrix as hm
 import omx_kinematic as ok
+import trajectory_generator as tg
+
+from matplotlib.animation import FuncAnimation
+
 
 class omxPlotterClass():
 
@@ -46,23 +50,15 @@ class omxPlotterClass():
     def plot_robot(self, matrices):
         """
         Plot robot frames and links.
-        
-        Args:
-            matrices: Can be either:
-                - List of tuples [(T1, label1), (T2, label2), ...]
-                - List of transformation matrices [T1, T2, ...]
         """
         frames = []
         labels = []
-        
-        # Check if matrices is a list of tuples or just matrices
+
         if len(matrices) > 0 and isinstance(matrices[0], tuple):
-            # Format: list of tuples (matrix, label)
             for m in matrices:
                 frames.append(m[0])
                 labels.append(m[1])
         else:
-            # Format: list of matrices
             for i, m in enumerate(matrices):
                 frames.append(m)
                 labels.append(f"Frame {i+1}")
@@ -70,46 +66,84 @@ class omxPlotterClass():
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
 
-        # Plot the links between frames
+        # links
         for i in range(1, len(frames)):
-            ax.plot([frames[i-1][0,3], frames[i][0,3]], 
-                   [frames[i-1][1,3], frames[i][1,3]], 
-                   [frames[i-1][2,3], frames[i][2,3]], 
-                   '-o', linewidth=2, color='gray')
+            ax.plot(
+                [frames[i-1][0,3], frames[i][0,3]],
+                [frames[i-1][1,3], frames[i][1,3]],
+                [frames[i-1][2,3], frames[i][2,3]],
+                '-o',
+                linewidth=2,
+                color='gray'
+            )
 
-        # Plot the frames and labels
+        # frames
         for i in range(len(frames)):
-            self.plot_frame(ax, frames[i], axis_length=0.05, label=labels[i])
+            self.plot_frame(ax, frames[i], axis_length=20, label=labels[i])
 
-        # Set equal aspect ratio
         ax.set_xlabel('X')
         ax.set_ylabel('Y')
         ax.set_zlabel('Z')
         ax.set_title('Robot frames and links')
-        
-        # Get bounds for equal aspect ratio
-        all_points = []
-        for frame in frames:
-            all_points.append(frame[:3, 3])
-        all_points = np.array(all_points)
-        
-        if len(all_points) > 0:
-            max_range = np.max(all_points, axis=0) - np.min(all_points, axis=0)
-            max_range = np.max(max_range) / 2.0
-            mid_x = (np.max(all_points[:, 0]) + np.min(all_points[:, 0])) * 0.5
-            mid_y = (np.max(all_points[:, 1]) + np.min(all_points[:, 1])) * 0.5
-            mid_z = (np.max(all_points[:, 2]) + np.min(all_points[:, 2])) * 0.5
-            ax.set_xlim(mid_x - max_range, mid_x + max_range)
-            ax.set_ylim(mid_y - max_range, mid_y + max_range)
-            ax.set_zlim(mid_z - max_range, mid_z + max_range)
+
+        plt.show()
+
+    def animate_robot(self, robot, trajectory, interval=50):
+        """
+        trajectory shape = (N,5)
+        """
+
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+
+        def update(frame):
+
+            ax.cla()
+
+            q = trajectory[frame]
+
+            transforms = robot.forward_kinematics(*q)
+
+            # pontos das juntas
+            pts = np.array([T[:3, 3] for T in transforms])
+
+            # links
+            ax.plot(
+                pts[:, 0],
+                pts[:, 1],
+                pts[:, 2],
+                '-o',
+                linewidth=3,
+                color='black'
+            )
+
+            # frames locais
+            for i, T in enumerate(transforms):
+                self.plot_frame(ax, T, axis_length=20)
+
+            ax.set_xlim(-300, 300)
+            ax.set_ylim(-300, 300)
+            ax.set_zlim(0, 500)
+
+            ax.set_xlabel("X")
+            ax.set_ylabel("Y")
+            ax.set_zlabel("Z")
+
+            ax.set_title(f"Frame {frame+1}/{len(trajectory)}")
+
+        ani = FuncAnimation(
+            fig,
+            update,
+            frames=len(trajectory),
+            interval=interval,
+            repeat=False
+        )
 
         plt.show()
 
 
 def test_with_your_angles():
-    """Test with your specific angles [0, 45, -45, -90, 45]"""
-    
-    # Define robot link lengths (adjust these to match your robot)
+
     l1 = 40
     l2 = 44.5
     l3 = 113.2
@@ -117,84 +151,45 @@ def test_with_your_angles():
     l5 = 162
     l6 = 43.2
     l7 = 80.5
-    
-    # Create robot instance
+
     robot = ok.omxKinematicClass(l1, l2, l3, l4, l5, l6, l7)
-    
-    your_angles = [0.78539815,  1.93086212, -0.95438512,  1.02167603,  0]  
-    
-    print(f"Testing with angles (degrees): {your_angles}")
-    
-    # Get the transformation result
+
+    your_angles = [0.78539815, 1.93086212, -0.95438512, 1.02167603, 0]
+
     result = robot.forward_kinematics(*your_angles)
-    print(result)
-    # Debug information
-    if isinstance(result, np.ndarray):
-        print(f"Matrix shape: {result.shape}")
-        print(f"\nTransformation matrix:")
-        print(result)
 
-    # Prepare transforms for plotting
-    if isinstance(result, np.ndarray) and result.shape == (4,4):
-        transforms = [(result, "End Effector")]
-
-    elif isinstance(result, list):
-        if len(result) > 0 and isinstance(result[0], tuple):
-            transforms = result
-        elif len(result) > 0 and isinstance(result[0], np.ndarray):
-            transforms = [(result[i], f"Joint {i+1}") for i in range(len(result))]
-        else:
-            # Assume it's a list of matrices in a different format
-            print("Attempting to interpret the result...")
-            transforms = []
-            for i, item in enumerate(result):
-                if isinstance(item, np.ndarray) and item.shape == (4,4):
-                    transforms.append((item, f"Frame {i+1}"))
-                else:
-                    print(f"Unexpected item {i}: {type(item)}") 
-
-    else:
-        print("Cannot interpret the return value for plotting")
-        return
-    
-    print(f"\nPlotting {len(transforms)} frames...")
     plotter = omxPlotterClass()
-    plotter.plot_robot(transforms)
+    plotter.plot_robot(result)
 
-def test_inverse():
-
-    l1 = 40
-    l2 = 44.5
-    l3 = 113.2
-    l4 = 41.5
-    l5 = 162
-    l6 = 43.2
-    l7 = 80.5
-
-    robot = ok.omxKinematicClass(l1,l2,l3,l4,l5,l6,l7)
-
-    # Pose desejada do tool tip
-    T_target = np.array([
-        [1,0,0,24],
-        [0,1,0,24],
-        [0,0,1,414],
-        [0,0,0,1]
-    ])
-
-    # IK resolve
-    q_sol = ok.inverse_kinematics(robot, T_target)
-
-    print("Ângulos encontrados:")
-    print(q_sol)
 
 def main(args=None):
-    """
-    Main function to validate the kinematics implementation.
-    Run different validation tests.
-    """
-    
-    # test_inverse()
-    test_with_your_angles()
+
+    l1 = 40
+    l2 = 44.5
+    l3 = 113.2
+    l4 = 41.5
+    l5 = 162
+    l6 = 43.2
+    l7 = 80.5
+
+    Tg = tg.TrajectoryGenerator(
+        5,
+        [2,2,2,2,2],
+        [1,1,1,1,1]
+    )
+
+    traj = Tg.compute_trajectory(
+        [0,0,0,0,0],
+        [1.56,0,0,0,0]
+    )
+
+    robot = ok.omxKinematicClass(
+        l1,l2,l3,l4,l5,l6,l7
+    )
+
+    plotter = omxPlotterClass()
+
+    plotter.animate_robot(robot, traj)
 
 
 if __name__ == '__main__':
