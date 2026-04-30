@@ -106,14 +106,21 @@ class TrajectoryGenerator:
 
             dq = abs(qf[n] - qi[n])
             s = np.sign(qf[n] - qi[n])
-
+            print(f"dq:{dq}, s:{s}")
             A = self.An[n]
 
             disc = (A*T)**2 - 4*A*dq
-            V = (A*T - np.sqrt(disc)) / 2
 
-            Tacc = V / A
-            Tcst = T - 2*Tacc
+            if disc < 0:
+                A_eff = 4 * dq / T**2
+                Tacc = T / 2
+                V = A_eff * Tacc
+                Tcst = 0
+
+            else:
+                V = (A*T - np.sqrt(disc)) / 2
+                Tacc = V / A
+                Tcst = T - 2*Tacc
 
             for k, t in enumerate(time):
 
@@ -212,6 +219,7 @@ class TrajectoryGenerator:
         # cada coluna = junta
         return np.array(resampled).T
 
+
     def compute_trajectory(self, qi, qf):
         """
         Computa trajetória completa sincronizada.
@@ -229,9 +237,6 @@ class TrajectoryGenerator:
         traj : ndarray
             Matriz [samples, joints]
         """
-
-        # 1. tempo máximo
-        Tmax = self.compute_max_duration(qi, qf)
 
         # 2. gerar trajetórias
         traj = self.generate_trajectory(qi, qf)

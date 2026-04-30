@@ -154,7 +154,7 @@ def test_with_your_angles():
 
     robot = ok.omxKinematicClass(l1, l2, l3, l4, l5, l6, l7)
 
-    your_angles = [0.78539815, 1.93086212, -0.95438512, 1.02167603, 0]
+    your_angles = [0, 1.93086212, -0.95438512, 1.02167603, 0]
 
     result = robot.forward_kinematics(*your_angles)
 
@@ -180,9 +180,9 @@ def main(args=None):
 
     traj = Tg.compute_trajectory(
         [0,0,0,0,0],
-        [1.56,0,0,0,0]
+        [0,0,1.57,0,0]
     )
-
+    
     robot = ok.omxKinematicClass(
         l1,l2,l3,l4,l5,l6,l7
     )
