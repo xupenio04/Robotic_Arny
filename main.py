@@ -13,22 +13,14 @@ TS       = 0.01                             # período de controle (s)
 
 
 def get_joint_input(n_joints: int) -> tuple[int, float]:
-    """Solicita ao usuário a junta e o ângulo desejado.
+    """Solicita ao usuário a junta e o ângulo desejado."""
 
-    Returns
-    -------
-    joint_index : int
-        Índice da junta (0-based internamente).
-    angle_rad : float
-        Ângulo de rotação desejado em radianos.
-    """
     while True:
         try:
             joint = int(input(f"\nJunta a mover [1-{n_joints}]: "))
-            if not (1 <= joint <= n_joints):
-                print(f"  ✗ Escolha uma junta entre 1 e {n_joints}.")
-                continue
-            break
+            if 1 <= joint <= n_joints:
+                break
+            print(f"  ✗ Escolha uma junta entre 1 e {n_joints}.")
         except ValueError:
             print("  ✗ Digite um número inteiro.")
 
@@ -60,45 +52,52 @@ def main():
     print("Posição atual (rad):", [f"{q:.4f}" for q in qi])
     print("Posição atual (°):  ", [f"{math.degrees(q):.2f}" for q in qi])
 
-    # ── Input do usuário ──────────────────────────────────────────────────────
-    joint_idx, delta_rad = get_joint_input(N_JOINTS)
+    # ── Loop principal — repete até o usuário sair ────────────────────────────
+    while True:
 
-    # ponto final: só a junta escolhida se move
-    qf = list(qi)
-    qf[joint_idx] += delta_rad
+        # ── Input do usuário ──────────────────────────────────────────────────
+        joint_idx, delta_rad = get_joint_input(N_JOINTS)
 
-    print(f"\nJunta {joint_idx + 1}:")
-    print(f"  qi = {math.degrees(qi[joint_idx]):.2f}°  →  "
-          f"qf = {math.degrees(qf[joint_idx]):.2f}°  "
-          f"(Δ = {math.degrees(delta_rad):+.2f}°)")
+        qf = list(qi)
+        qf[joint_idx] += delta_rad
 
-    # ── Gera trajetória ───────────────────────────────────────────────────────
-    print("\nGerando trajetória...")
-    tg = TrajectoryGenerator(N_JOINTS, VMAX, AMAX, ts=TS)
-    traj, vel, acc = tg.compute_trajectory(qi, qf)
+        print(f"\nJunta {joint_idx + 1}:")
+        print(f"  qi = {math.degrees(qi[joint_idx]):.2f}°  →  "
+              f"qf = {math.degrees(qf[joint_idx]):.2f}°  "
+              f"(Δ = {math.degrees(delta_rad):+.2f}°)")
 
-    n_steps = traj.shape[0]
-    T_total = n_steps * TS
-    print(f"  {n_steps} amostras  |  duração ≈ {T_total:.2f} s")
+        # ── Gera trajetória ───────────────────────────────────────────────────
+        print("\nGerando trajetória...")
+        tg = TrajectoryGenerator(N_JOINTS, VMAX, AMAX, ts=TS)
+        traj, vel, acc = tg.compute_trajectory(qi, qf)
 
-    # ── Confirmação antes de executar ─────────────────────────────────────────
-    confirm = input("\nExecutar no robô? [s/N]: ").strip().lower()
-    if confirm != "s":
-        print("Execução cancelada.")
-        return
+        n_steps = traj.shape[0]
+        T_total = n_steps * TS
+        print(f"  {n_steps} amostras  |  duração ≈ {T_total:.2f} s")
 
-    # ── Executa no robô ───────────────────────────────────────────────────────
-    print("\nExecutando trajetória...")
-    driver.execute_trajectory(traj.tolist(), TS)
-    print("Trajetória concluída.")
+        # ── Confirmação antes de executar ─────────────────────────────────────
+        confirm = input("\nExecutar no robô? [s/N]: ").strip().lower()
+        if confirm != "s":
+            print("Execução cancelada.")
+        else:
+            # ── Executa no robô ───────────────────────────────────────────────
+            print("\nExecutando trajetória...")
+            driver.execute_trajectory(traj.tolist(), TS)
+            print("Trajetória concluída.")
 
-    # ── Lê posição final ──────────────────────────────────────────────────────
-    qf_real = driver.read_joint_positions()
-    print("\nPosição final lida (rad):", [f"{q:.4f}" for q in qf_real])
-    print("Posição final lida (°):  ", [f"{math.degrees(q):.2f}" for q in qf_real])
+            # ── Lê posição final e atualiza qi para o próximo movimento ───────
+            qi = driver.read_joint_positions()
+            print("\nPosição final lida (rad):", [f"{q:.4f}" for q in qi])
+            print("Posição final lida (°):  ", [f"{math.degrees(q):.2f}" for q in qi])
 
-    err_deg = math.degrees(abs(qf_real[joint_idx] - qf[joint_idx]))
-    print(f"\nErro na junta {joint_idx + 1}: {err_deg:.3f}°")
+            err_deg = math.degrees(abs(qi[joint_idx] - qf[joint_idx]))
+            print(f"Erro na junta {joint_idx + 1}: {err_deg:.3f}°")
+
+        # ── Continuar ou sair ─────────────────────────────────────────────────
+        again = input("\nMover outra junta? [s/N]: ").strip().lower()
+        if again != "s":
+            print("\nEncerrando...")
+            break
 
 
 if __name__ == "__main__":
