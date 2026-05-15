@@ -36,10 +36,6 @@ class omxKinematicClass():
 
         return [T0, T1, T2, T_extra_joint, T3, T4, T5, T6]
     
-# =====================================================
-# CINEMÁTICA INVERSA
-# =====================================================
-
 def numerical_jacobian(robot, q, eps=1e-6):
     """
     Jacobiano numérico da posição do tool tip

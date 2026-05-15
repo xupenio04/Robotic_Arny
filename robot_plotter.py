@@ -180,7 +180,7 @@ def main(args=None):
 
     traj = Tg.compute_trajectory(
         [0,0,0,0,0],
-        [0,0,1.57,0,0]
+        [1.57,0,0,0,0]
     )
     
     robot = ok.omxKinematicClass(

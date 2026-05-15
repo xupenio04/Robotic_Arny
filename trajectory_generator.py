@@ -7,22 +7,7 @@ class TrajectoryGenerator:
     """
 
     def __init__(self, n, Vn, An, ts=0.01):
-        """
-        Parameters
-        ----------
-        n : int
-            Número total de juntas.
-
-        Vn : array-like
-            Velocidade máxima de cada junta.
-
-        An : array-like
-            Aceleração máxima de cada junta.
-
-        ts : float
-            Período de amostragem.
-        """
-
+ 
         self.n = int(n)
         self.Vn = np.array(Vn, dtype=float)
         self.An = np.array(An, dtype=float)
@@ -35,22 +20,6 @@ class TrajectoryGenerator:
             raise ValueError("An deve ter tamanho n")
 
     def compute_max_duration(self, qi, qf):
-        """
-        Calcula o maior tempo de movimento entre todas as juntas.
-
-        Parameters
-        ----------
-        qi : array-like
-            Posições iniciais.
-
-        qf : array-like
-            Posições finais.
-
-        Returns
-        -------
-        Tmax : float
-            Maior duração entre todas as juntas.
-        """
 
         qi = np.array(qi, dtype=float)
         qf = np.array(qf, dtype=float)
@@ -101,6 +70,8 @@ class TrajectoryGenerator:
         time = np.arange(0, T + self.ts, self.ts)
 
         traj = np.zeros((len(time), self.n))
+        vel  = np.zeros((len(time), self.n))
+        acc  = np.zeros((len(time), self.n))
 
         for n in range(self.n):
 
@@ -125,30 +96,32 @@ class TrajectoryGenerator:
             for k, t in enumerate(time):
 
                 if t <= Tacc:
-                    q = qi[n] + s*0.5*A*t**2
+                    # FASE DE ACELERAÇÃO
+                    q = qi[n] + s * 0.5 * A * t**2
+                    v = s * A * t
+                    a = s * A
 
                 elif t <= Tacc + Tcst:
-                    q1 = 0.5*A*Tacc**2
-                    q = qi[n] + s*(q1 + V*(t-Tacc))
+                    # FASE DE VELOCIDADE CONSTANTE
+                    q1 = 0.5 * A * Tacc**2
+                    q = qi[n] + s * (q1 + V * (t - Tacc))
+                    v = s * V
+                    a = 0
 
                 else:
-                    td = t - Tacc - Tcst
-                    q2 = dq - 0.5*A*(T-Tacc-Tcst)**2
-                    q = qf[n] - s*0.5*A*(T-t)**2
+                    # FASE DE DESACELERAÇÃO
+                    q = qf[n] - s * 0.5 * A * (T - t)**2
+                    v = s * A * (T - t)
+                    a = -s * A
 
                 traj[k, n] = q
+                vel[k, n]  = v
+                acc[k, n]  = a
 
-        return traj
+
+        return traj, vel, acc
 
     def plot_trajectory(self, traj):
-        """
-        Plota as trajetórias de todas as juntas.
-
-        Parameters
-        ----------
-        traj : ndarray
-            Matriz [tempo, junta]
-        """
 
         traj = np.array(traj)
 
@@ -181,22 +154,6 @@ class TrajectoryGenerator:
         plt.show()
 
     def resample_trajectory(self, trajectories):
-        """
-        Reamostra trajetórias para que todas tenham
-        o mesmo número de amostras.
-
-        Parameters
-        ----------
-        trajectories : list of arrays
-            Lista contendo uma trajetória por junta.
-
-        Returns
-        -------
-        resampled : ndarray
-            Matriz [samples, joints]
-        """
-
-        # tamanho máximo
         max_samples = max(len(traj) for traj in trajectories)
 
         resampled = []
@@ -221,29 +178,24 @@ class TrajectoryGenerator:
 
 
     def compute_trajectory(self, qi, qf):
-        """
-        Computa trajetória completa sincronizada.
 
-        Parameters
-        ----------
-        qi : array-like
-            Posições iniciais
+        traj, vel, acc = self.generate_trajectory(qi, qf)
 
-        qf : array-like
-            Posições finais
-
-        Returns
-        -------
-        traj : ndarray
-            Matriz [samples, joints]
-        """
-
-        # 2. gerar trajetórias
-        traj = self.generate_trajectory(qi, qf)
+        print(f"Generated trajectory with {len(traj)}, {len(vel)}, {len(acc)} samples before resampling.")
 
         # 3. reamostrar
         traj = self.resample_trajectory(
             [traj[:, k] for k in range(self.n)]
         )
 
-        return traj
+        vel = self.resample_trajectory(
+            [vel[:, k] for k in range(self.n)]
+        )
+
+        acc = self.resample_trajectory(
+            [acc[:, k] for k in range(self.n)]
+        )
+
+        print(f"Generated trajectory with {len(traj)}, {len(vel)}, {len(acc)} samples.")
+
+        return traj, vel, acc

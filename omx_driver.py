@@ -11,8 +11,8 @@ MOTOR_CONFIG = [
     {"id": 6, "D":  1, "S": 4096, "offset": -2048, "raw_min":  2048, "raw_max":  2300},  # Joint 6
 ]
 
-PORT      = "/dev/ttyACM0"
-BAUD_RATE = 57600
+PORT      = "/dev/ttyACM1"
+BAUD_RATE = 1000000
 
 
 def raw_to_joint(raw: int, D: int, S: int, offset: int) -> float:
