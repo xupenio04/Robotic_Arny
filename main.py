@@ -12,93 +12,32 @@ AMAX     = [math.radians(10)] * N_JOINTS   # 10 °/s² por junta
 TS       = 0.01                             # período de controle (s)
 
 
-def get_joint_input(n_joints: int) -> tuple[int, float]:
-    """Solicita ao usuário a junta e o ângulo desejado."""
-
-    while True:
-        try:
-            joint = int(input(f"\nJunta a mover [1-{n_joints}]: "))
-            if 1 <= joint <= n_joints:
-                break
-            print(f"  ✗ Escolha uma junta entre 1 e {n_joints}.")
-        except ValueError:
-            print("  ✗ Digite um número inteiro.")
-
-    while True:
-        try:
-            angle_deg = float(input("Ângulo de rotação (graus): "))
-            break
-        except ValueError:
-            print("  ✗ Digite um número válido.")
-
-    return joint - 1, math.radians(angle_deg)
-
-
 def main():
-    print("=" * 50)
-    print("   Teste de trajetória — OpenManipulator-X")
-    print("=" * 50)
 
-    # ── Conecta ao robô ───────────────────────────────────────────────────────
-    try:
-        driver = OmxDriver()
-    except Exception as e:
-        print(f"\n[ERRO] Não foi possível conectar ao robô: {e}")
+    driver = OmxDriver()
+
+    if not driver.motors:
+        print("Nenhum motor encontrado. Verifique a conexão e tente novamente.")
         return
 
-    # ── Lê posição atual como ponto de partida ────────────────────────────────
-    print("\nLendo posição atual das juntas...")
-    qi = driver.read_joint_positions()
-    print("Posição atual (rad):", [f"{q:.4f}" for q in qi])
-    print("Posição atual (°):  ", [f"{math.degrees(q):.2f}" for q in qi])
-
-    # ── Loop principal — repete até o usuário sair ────────────────────────────
     while True:
 
-        # ── Input do usuário ──────────────────────────────────────────────────
-        joint_idx, delta_rad = get_joint_input(N_JOINTS)
+        print("Digite a junta que deseja mover (1-6) ou 'sair' para encerrar:")
+        id_joint = int(input()) + 10
 
-        qf = list(qi)
-        qf[joint_idx] += delta_rad
+        if id_joint < 0 or id_joint >= N_JOINTS:
+            print("Junta inválida.")
+            continue
 
-        print(f"\nJunta {joint_idx + 1}:")
-        print(f"  qi = {math.degrees(qi[joint_idx]):.2f}°  →  "
-              f"qf = {math.degrees(qf[joint_idx]):.2f}°  "
-              f"(Δ = {math.degrees(delta_rad):+.2f}°)")
+        print("Digite o ângulo desejado (graus):")
+        angle = math.radians(float(input()))
 
-        # ── Gera trajetória ───────────────────────────────────────────────────
-        print("\nGerando trajetória...")
-        tg = TrajectoryGenerator(N_JOINTS, VMAX, AMAX, ts=TS)
-        traj, vel, acc = tg.compute_trajectory(qi, qf)
+        qi = 0
+        qf = angle
 
-        n_steps = traj.shape[0]
-        T_total = n_steps * TS
-        print(f"  {n_steps} amostras  |  duração ≈ {T_total:.2f} s")
-
-        # ── Confirmação antes de executar ─────────────────────────────────────
-        confirm = input("\nExecutar no robô? [s/N]: ").strip().lower()
-        if confirm != "s":
-            print("Execução cancelada.")
-        else:
-            # ── Executa no robô ───────────────────────────────────────────────
-            print("\nExecutando trajetória...")
-            driver.execute_trajectory(traj.tolist(), TS)
-            print("Trajetória concluída.")
-
-            # ── Lê posição final e atualiza qi para o próximo movimento ───────
-            qi = driver.read_joint_positions()
-            print("\nPosição final lida (rad):", [f"{q:.4f}" for q in qi])
-            print("Posição final lida (°):  ", [f"{math.degrees(q):.2f}" for q in qi])
-
-            err_deg = math.degrees(abs(qi[joint_idx] - qf[joint_idx]))
-            print(f"Erro na junta {joint_idx + 1}: {err_deg:.3f}°")
-
-        # ── Continuar ou sair ─────────────────────────────────────────────────
-        again = input("\nMover outra junta? [s/N]: ").strip().lower()
-        if again != "s":
-            print("\nEncerrando...")
-            break
-
+        Tg = TrajectoryGenerator(1, [VMAX[id_joint-10]], [AMAX[id_joint-10]], ts=TS)
+        traj, _, _ = Tg.compute_trajectory([qi], [qf])
+        driver.execute_trajectory_one_joint(traj, TS, id_joint-10)
 
 if __name__ == "__main__":
     main()

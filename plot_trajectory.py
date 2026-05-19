@@ -79,7 +79,7 @@ def main():
     ts   = 0.01               
 
     qi = [0, 0, 0, 0, 0]
-    qf = [0.2, 0.1, 0.15, 0.05, 0.1]
+    qf = [0.2, 0.1, -0.15, 0.05, 0.1]
 
     # ── Gera trajetória ───────────────────────────────────────────────────────
     Tg = tg.TrajectoryGenerator(n_joints, Vmax, Amax, ts=ts)
