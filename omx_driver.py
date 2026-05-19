@@ -143,30 +143,22 @@ class OmxDriver:
 
     def execute_trajectory_one_joint(self, traj: list[list[float]], ts: float, joint_idx: int) -> None:
 
+        motor = self._motors[joint_idx]
+        cfg   = self._motor_config[joint_idx]
+
         for step_idx, points in enumerate(traj):
             t_start = time.perf_counter()
 
-            motor = self._motors[joint_idx]
-            raw_cmd = joint_to_raw(
-                points[joint_idx][0],
-                self._motor_config[joint_idx]["D"],
-                self._motor_config[joint_idx]["S"],
-                self._motor_config[joint_idx]["offset"],
-            )
-            raw_cmd = clamp_raw(
-                raw_cmd,
-                self._motor_config[joint_idx]["raw_min"],
-                self._motor_config[joint_idx]["raw_max"],
-                motor_id=self._motor_config[joint_idx]["id"],
-            )
+            raw_cmd = joint_to_raw(points[0], cfg["D"], cfg["S"], cfg["offset"])
+            raw_cmd = clamp_raw(raw_cmd, cfg["raw_min"], cfg["raw_max"], cfg["id"])
+
             self._group_executor.addCmd(motor.stageSetGoalPosition(raw_cmd))
             self._group_executor.executeWrite()
             self._group_executor.clearStagedWriteCommands()
 
-            elapsed = time.perf_counter() - t_start
+            elapsed   = time.perf_counter() - t_start
             remaining = ts - elapsed
             if remaining < 0:
-                print(f"[OmxDriver] WARNING: step {step_idx} overran ts by "
-                    f"{-remaining * 1e3:.2f} ms.")
+                print(f"[OmxDriver] WARNING: step {step_idx} overran ts by {-remaining * 1e3:.2f} ms.")
             else:
                 time.sleep(remaining)

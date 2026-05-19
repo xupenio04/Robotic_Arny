@@ -42,3 +42,6 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+# IndexError: index 1 is out of bounds for axis 0 with size 1 
+# points[joint_idx] in execute_trajectory_one_joint() está tentando acessar um índice que não existe, porque traj é uma lista de listas, onde cada sublista tem apenas um elemento (a posição da junta). Para corrigir isso, basta acessar o primeiro elemento da sublista:
