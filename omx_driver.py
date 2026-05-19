@@ -148,7 +148,7 @@ class OmxDriver:
 
             motor = self._motors[joint_idx]
             raw_cmd = joint_to_raw(
-                points[joint_idx],
+                points[joint_idx][0],
                 self._motor_config[joint_idx]["D"],
                 self._motor_config[joint_idx]["S"],
                 self._motor_config[joint_idx]["offset"],

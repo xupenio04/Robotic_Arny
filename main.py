@@ -25,7 +25,7 @@ def main():
         print("Digite a junta que deseja mover (1-6) ou 'sair' para encerrar:")
         id_joint = int(input()) + 10
 
-        if id_joint < 0 or id_joint >= N_JOINTS:
+        if id_joint < 10 or id_joint > N_JOINTS + 10:
             print("Junta inválida.")
             continue
 
@@ -35,9 +35,10 @@ def main():
         qi = 0
         qf = angle
 
-        Tg = TrajectoryGenerator(1, [VMAX[id_joint-10]], [AMAX[id_joint-10]], ts=TS)
+        Tg = TrajectoryGenerator(1, [VMAX[id_joint-11]], [AMAX[id_joint-11]], ts=TS)
         traj, _, _ = Tg.compute_trajectory([qi], [qf])
-        driver.execute_trajectory_one_joint(traj, TS, id_joint-10)
+        driver.execute_trajectory_one_joint(traj, TS, id_joint-11)
 
 if __name__ == "__main__":
     main()
+
