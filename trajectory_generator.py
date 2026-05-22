@@ -23,6 +23,8 @@ class TrajectoryGenerator:
 
         qi = np.array(qi, dtype=float)
         qf = np.array(qf, dtype=float)
+        
+        print(f"tamanho qi: {len(qi)} qf: {len(qf)} ")
 
         if len(qi) != self.n or len(qf) != self.n:
             raise ValueError("qi e qf devem ter tamanho n")
@@ -118,7 +120,6 @@ class TrajectoryGenerator:
                 vel[k, n]  = v
                 acc[k, n]  = a
 
-
         return traj, vel, acc
 
     def plot_trajectory(self, traj):
@@ -152,6 +153,7 @@ class TrajectoryGenerator:
 
         plt.tight_layout()
         plt.show()
+
 
     def resample_trajectory(self, trajectories):
         max_samples = max(len(traj) for traj in trajectories)

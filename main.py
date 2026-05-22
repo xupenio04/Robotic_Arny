@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import time
 
 from omx_driver import OmxDriver
 from trajectory_generator import TrajectoryGenerator
@@ -12,36 +13,55 @@ AMAX     = [math.radians(10)] * N_JOINTS   # 10 °/s² por junta
 TS       = 0.01                             # período de controle (s)
 
 
+
+
 def main():
 
     driver = OmxDriver()
 
-    if not driver.motors:
+    if not driver._motors:
         print("Nenhum motor encontrado. Verifique a conexão e tente novamente.")
         return
 
     while True:
 
-        print("Digite a junta que deseja mover (1-6) ou 'sair' para encerrar:")
-        id_joint = int(input()) + 10
+        angle = []
 
-        if id_joint < 10 or id_joint > N_JOINTS + 10:
-            print("Junta inválida.")
-            continue
+        for i in range (N_JOINTS):
+            print(f"Digite o ângulo desejado para a junta {i+1} (graus):")
+            angle_input = math.radians(float(input()))
 
-        print("Digite o ângulo desejado (graus):")
-        angle = math.radians(float(input()))
+            if angle_input == "sair":
+                driver.__del__()
+                return
 
-        qi = 0
+            if i == 5:
+                print("Deseja abrir a garra")
+                command = input()
+                if command == "sim":
+                    driver.open_gripper(TS)
+                else:
+                    driver.close_gripper(TS)
+
+            angle.append(angle_input)
+            print(angle)
+
+        qi = driver.read_joint_positions()
         qf = angle
 
-        Tg = TrajectoryGenerator(1, [VMAX[id_joint-11]], [AMAX[id_joint-11]], ts=TS)
-        traj, _, _ = Tg.compute_trajectory([qi], [qf])
-        driver.execute_trajectory_one_joint(traj, TS, id_joint-11)
+        #print(driver.read_joint_positions())
+        #(print(qi[id_joint-11]))
+        #print(qf)
+
+        Tg = TrajectoryGenerator(N_JOINTS, VMAX, AMAX, ts=TS)
+        traj, _, _ = Tg.compute_trajectory(qi, qf)
+
+        print(driver.read_joint_positions())
+
+        #driver.execute_trajectory_one_joint(traj, TS, id_joint-11)
+
+        driver.execute_trajectory(traj, TS)
 
 if __name__ == "__main__":
     main()
 
-
-# IndexError: index 1 is out of bounds for axis 0 with size 1 
-# points[joint_idx] in execute_trajectory_one_joint() está tentando acessar um índice que não existe, porque traj é uma lista de listas, onde cada sublista tem apenas um elemento (a posição da junta). Para corrigir isso, basta acessar o primeiro elemento da sublista:
