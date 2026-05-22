@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from omx_interfaces/srv/GenerateTrajectory.srv
+// generated code does not contain a copyright notice
+
+#include "trajectory_msgs/msg/JointTrajectory.idl"
+#include "trajectory_msgs/msg/JointTrajectoryPoint.idl"
+
+module omx_interfaces {
+  module srv {
+    struct GenerateTrajectory_Request {
+      sequence<trajectory_msgs::msg::JointTrajectoryPoint> waypoints;
+
+      sequence<string> joint_names;
+
+      double duration;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct GenerateTrajectory_Response {
+      trajectory_msgs::msg::JointTrajectory trajectory;
+
+      boolean success;
+
+      string message;
+    };
+  };
+};

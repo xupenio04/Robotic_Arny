@@ -1,0 +1,6 @@
+srv/ExecuteTrajectory.idl
+srv/ExecuteTrajectory.srv
+srv/GenerateTrajectory.idl
+srv/GenerateTrajectory.srv
+srv/SetGripper.idl
+srv/SetGripper.srv

@@ -1,0 +1,43 @@
+running egg_info
+creating ../../build/omx_ros2/omx_ros2.egg-info
+writing ../../build/omx_ros2/omx_ros2.egg-info/PKG-INFO
+writing dependency_links to ../../build/omx_ros2/omx_ros2.egg-info/dependency_links.txt
+writing requirements to ../../build/omx_ros2/omx_ros2.egg-info/requires.txt
+writing top-level names to ../../build/omx_ros2/omx_ros2.egg-info/top_level.txt
+writing manifest file '../../build/omx_ros2/omx_ros2.egg-info/SOURCES.txt'
+reading manifest file '../../build/omx_ros2/omx_ros2.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/omx_ros2/omx_ros2.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build
+creating /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib
+creating /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+copying omx_ros2/__init__.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+copying omx_ros2/trajectory_generator.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+copying omx_ros2/homogeneous_matrix.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+copying omx_ros2/omx_driver.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+copying omx_ros2/omx_kinematic.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+running install
+running install_lib
+creating /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2
+copying /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2/__init__.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2
+copying /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2/trajectory_generator.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2
+copying /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2/homogeneous_matrix.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2
+copying /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2/omx_driver.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2
+copying /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2/omx_kinematic.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2
+byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/trajectory_generator.py to trajectory_generator.cpython-312.pyc
+byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/homogeneous_matrix.py to homogeneous_matrix.cpython-312.pyc
+byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/omx_driver.py to omx_driver.cpython-312.pyc
+byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/omx_kinematic.py to omx_kinematic.cpython-312.pyc
+running install_data
+creating /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/share/ament_index
+creating /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/share/ament_index/resource_index
+creating /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/share/ament_index/resource_index/packages
+copying resource/omx_ros2 -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/share/ament_index/resource_index/packages
+copying package.xml -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/share/omx_ros2
+running install_egg_info
+Copying ../../build/omx_ros2/omx_ros2.egg-info to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/install.log'

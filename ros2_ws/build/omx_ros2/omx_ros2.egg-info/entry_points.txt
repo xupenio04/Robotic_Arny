@@ -1,0 +1,2 @@
+[console_scripts]
+omx_driver_node = omx_ros2.omx_driver_node:main

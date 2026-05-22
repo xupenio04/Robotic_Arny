@@ -1,0 +1,8 @@
+trajectory_msgs/JointTrajectoryPoint[] waypoints
+string[] joint_names
+float64 duration
+---
+# Response
+trajectory_msgs/JointTrajectory trajectory
+bool success
+string message

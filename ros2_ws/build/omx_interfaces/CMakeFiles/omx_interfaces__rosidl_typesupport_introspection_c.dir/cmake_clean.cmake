@@ -1,0 +1,21 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/execute_trajectory__type_support.c.o"
+  "CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/execute_trajectory__type_support.c.o.d"
+  "CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__type_support.c.o"
+  "CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__type_support.c.o.d"
+  "CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/set_gripper__type_support.c.o"
+  "CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/set_gripper__type_support.c.o.d"
+  "libomx_interfaces__rosidl_typesupport_introspection_c.pdb"
+  "libomx_interfaces__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/execute_trajectory__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/execute_trajectory__type_support.c"
+  "rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__type_support.c"
+  "rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/set_gripper__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/set_gripper__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

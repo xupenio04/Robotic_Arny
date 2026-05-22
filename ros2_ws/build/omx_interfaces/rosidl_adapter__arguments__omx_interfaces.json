@@ -1,0 +1,8 @@
+{
+  "package_name": "omx_interfaces",
+  "non_idl_tuples": [
+    "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/src/omx_interfaces:srv/GenerateTrajectory.srv",
+    "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/src/omx_interfaces:srv/ExecuteTrajectory.srv",
+    "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/src/omx_interfaces:srv/SetGripper.srv"
+  ]
+}

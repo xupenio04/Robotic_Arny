@@ -1,0 +1,3 @@
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_adapter/omx_interfaces:srv/GenerateTrajectory.idl
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_adapter/omx_interfaces:srv/ExecuteTrajectory.idl
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_adapter/omx_interfaces:srv/SetGripper.idl

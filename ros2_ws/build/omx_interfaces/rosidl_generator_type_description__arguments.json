@@ -1,0 +1,16 @@
+{
+  "package_name": "omx_interfaces",
+  "output_dir": "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_type_description/omx_interfaces",
+  "idl_tuples": [
+    "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_adapter/omx_interfaces:srv/GenerateTrajectory.idl",
+    "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_adapter/omx_interfaces:srv/ExecuteTrajectory.idl",
+    "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_adapter/omx_interfaces:srv/SetGripper.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "trajectory_msgs:/opt/ros/jazzy/share/trajectory_msgs",
+    "geometry_msgs:/opt/ros/jazzy/share/geometry_msgs",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs"
+  ]
+}

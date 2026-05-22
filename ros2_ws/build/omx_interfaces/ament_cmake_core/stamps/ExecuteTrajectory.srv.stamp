@@ -1,0 +1,6 @@
+# Request
+trajectory_msgs/JointTrajectory trajectory
+---
+# Response
+bool success
+string message

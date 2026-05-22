@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from omx_interfaces/srv/ExecuteTrajectory.srv
+// generated code does not contain a copyright notice
+
+#include "trajectory_msgs/msg/JointTrajectory.idl"
+
+module omx_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request")
+    struct ExecuteTrajectory_Request {
+      trajectory_msgs::msg::JointTrajectory trajectory;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct ExecuteTrajectory_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};
