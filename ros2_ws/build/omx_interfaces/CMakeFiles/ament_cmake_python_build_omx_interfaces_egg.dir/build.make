@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_omx_interfaces_egg.dir/compiler_depe
 include CMakeFiles/ament_cmake_python_build_omx_interfaces_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_omx_interfaces_egg:
-	cd /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/ament_cmake_python/omx_interfaces && /home/robot/venv_omx/bin/python3 setup.py egg_info
+	cd /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/ament_cmake_python/omx_interfaces && /usr/bin/python3 setup.py egg_info
 
 ament_cmake_python_build_omx_interfaces_egg: CMakeFiles/ament_cmake_python_build_omx_interfaces_egg
 ament_cmake_python_build_omx_interfaces_egg: CMakeFiles/ament_cmake_python_build_omx_interfaces_egg.dir/build.make

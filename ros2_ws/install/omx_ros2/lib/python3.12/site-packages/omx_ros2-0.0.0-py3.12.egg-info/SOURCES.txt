@@ -14,7 +14,9 @@ omx_ros2/homogeneous_matrix.py
 omx_ros2/omx_driver.py
 omx_ros2/omx_driver_node.py
 omx_ros2/omx_kinematic.py
+omx_ros2/task_supervisor_node.py
 omx_ros2/trajectory_generator.py
+omx_ros2/trajectory_generator_node.py
 resource/omx_ros2
 test/test_copyright.py
 test/test_flake8.py

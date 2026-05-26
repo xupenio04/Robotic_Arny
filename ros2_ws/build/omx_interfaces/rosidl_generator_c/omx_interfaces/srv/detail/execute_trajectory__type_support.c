@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "omx_interfaces/srv/detail/execute_trajectory__type_support.h"
-#include "omx_interfaces/srv/detail/execute_trajectory__functions.h"
 #include "omx_interfaces/srv/detail/execute_trajectory__struct.h"
+#include "omx_interfaces/srv/detail/execute_trajectory__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "omx_interfaces/srv/detail/execute_trajectory__functions.h"
 
 #ifdef __cplusplus
 extern "C"

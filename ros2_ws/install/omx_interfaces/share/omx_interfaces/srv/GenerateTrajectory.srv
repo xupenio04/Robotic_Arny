@@ -1,8 +1,1 @@
-trajectory_msgs/JointTrajectoryPoint[] waypoints
-string[] joint_names
-float64 duration
----
-# Response
-trajectory_msgs/JointTrajectory trajectory
-bool success
-string message
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/src/omx_interfaces/srv/GenerateTrajectory.srv

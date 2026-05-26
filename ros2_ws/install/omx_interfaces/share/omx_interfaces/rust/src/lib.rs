@@ -1,12 +1,1 @@
-#![allow(non_camel_case_types)]
-#![allow(clippy::derive_partial_eq_without_eq)]
-#![allow(clippy::upper_case_acronyms)]
-
-
-#[path = "srv.rs"]
-mod srv_idiomatic;
-pub mod srv {
-    pub use super::srv_idiomatic::*;
-    pub mod rmw;
-}
-
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_rs/omx_interfaces/rust/src/lib.rs

@@ -1,6 +1,6 @@
 import numpy as np
 import math
-import homogeneous_matrix as hm
+from . import homogeneous_matrix as hm
 import matplotlib.pyplot as plt
 
 

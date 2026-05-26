@@ -161,7 +161,7 @@ rosidl_generator_c/omx_interfaces/srv/generate_trajectory.h: /opt/ros/jazzy/shar
 rosidl_generator_c/omx_interfaces/srv/generate_trajectory.h: /opt/ros/jazzy/share/geometry_msgs/msg/WrenchStamped.idl
 rosidl_generator_c/omx_interfaces/srv/generate_trajectory.h: /opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
-	/home/robot/venv_omx/bin/python3 /opt/ros/jazzy/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_c__arguments.json
+	/usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_c__arguments.json
 
 rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__functions.h: rosidl_generator_c/omx_interfaces/srv/generate_trajectory.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__functions.h

@@ -76,7 +76,7 @@ rosidl_generator_type_description/omx_interfaces/srv/GenerateTrajectory.json: ro
 rosidl_generator_type_description/omx_interfaces/srv/GenerateTrajectory.json: rosidl_adapter/omx_interfaces/srv/ExecuteTrajectory.idl
 rosidl_generator_type_description/omx_interfaces/srv/GenerateTrajectory.json: rosidl_adapter/omx_interfaces/srv/SetGripper.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating type hashes for ROS interfaces"
-	/home/robot/venv_omx/bin/python3 /opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description --generator-arguments-file /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_type_description__arguments.json
+	/usr/bin/python3 /opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description --generator-arguments-file /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_type_description__arguments.json
 
 rosidl_generator_type_description/omx_interfaces/srv/ExecuteTrajectory.json: rosidl_generator_type_description/omx_interfaces/srv/GenerateTrajectory.json
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_type_description/omx_interfaces/srv/ExecuteTrajectory.json

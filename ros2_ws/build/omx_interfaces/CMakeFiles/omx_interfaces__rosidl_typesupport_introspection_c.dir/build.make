@@ -150,7 +150,7 @@ rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory
 rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_introspection_c.h: /opt/ros/jazzy/share/geometry_msgs/msg/WrenchStamped.idl
 rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_introspection_c.h: /opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C introspection for ROS interfaces"
-	/home/robot/venv_omx/bin/python3 /opt/ros/jazzy/lib/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c --generator-arguments-file /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_typesupport_introspection_c__arguments.json
+	/usr/bin/python3 /opt/ros/jazzy/lib/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c --generator-arguments-file /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_typesupport_introspection_c__arguments.json
 
 rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/execute_trajectory__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/execute_trajectory__rosidl_typesupport_introspection_c.h

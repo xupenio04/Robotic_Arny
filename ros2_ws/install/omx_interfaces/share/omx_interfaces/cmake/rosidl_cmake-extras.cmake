@@ -1,4 +1,1 @@
-# generated from rosidl_cmake/cmake/rosidl_cmake-extras.cmake.in
-
-set(omx_interfaces_IDL_FILES "srv/GenerateTrajectory.idl;srv/ExecuteTrajectory.idl;srv/SetGripper.idl")
-set(omx_interfaces_INTERFACE_FILES "srv/GenerateTrajectory.srv;srv/ExecuteTrajectory.srv;srv/SetGripper.srv")
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake

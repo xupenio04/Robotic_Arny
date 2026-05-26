@@ -259,7 +259,7 @@ class OmxDriver:
             # Validação de tamanho
             # ----------------------------------------------------------------
 
-            if len(points) != len(self._motors):
+            if len(points) != len(self._motors) - 1:
                 raise ValueError(
                     f"Trajectory point size ({len(points)}) "
                     f"!= number of motors ({len(self._motors)})."
@@ -271,7 +271,7 @@ class OmxDriver:
             # Stage dos comandos
             # ----------------------------------------------------------------
 
-            for i, motor in enumerate(self._motors):
+            for i in range(min(len(points), len(self._motors))):
 
                 raw_cmd = joint_to_raw(
                     points[i],
@@ -288,7 +288,7 @@ class OmxDriver:
                 )
 
                 self._group_executor.addCmd(
-                    motor.stageSetGoalPosition(raw_cmd)
+                    self._motors[i].stageSetGoalPosition(raw_cmd)
                 )
 
             # ----------------------------------------------------------------

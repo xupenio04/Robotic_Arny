@@ -4,12 +4,16 @@
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/omx_driver.py
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/omx_kinematic.py
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/omx_driver_node.py
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/trajectory_generator_node.py
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/task_supervisor_node.py
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/__init__.cpython-312.pyc
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/trajectory_generator.cpython-312.pyc
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/homogeneous_matrix.cpython-312.pyc
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/omx_driver.cpython-312.pyc
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/omx_kinematic.cpython-312.pyc
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/omx_driver_node.cpython-312.pyc
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/trajectory_generator_node.cpython-312.pyc
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/__pycache__/task_supervisor_node.cpython-312.pyc
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/share/ament_index/resource_index/packages/omx_ros2
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/share/omx_ros2/package.xml
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info/dependency_links.txt
@@ -20,3 +24,5 @@
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info/zip-safe
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info/entry_points.txt
 /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2/omx_driver_node
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2/task_supervisor_node
+/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2/trajectory_generator_node

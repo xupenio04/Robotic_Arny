@@ -23,7 +23,7 @@ MOTOR_CONFIG = [
     {"id": 13, "D": -1, "S": 4096, "offset":  1024, "raw_min": 730, "raw_max": 3200},
     {"id": 14, "D": -1, "S": 4096, "offset":  2048, "raw_min": 700, "raw_max": 3300},
     {"id": 15, "D":  1, "S": 4096, "offset":  2048, "raw_min":    0, "raw_max": 4096},
-    {"id": 16, "D":  1, "S": 4096, "offset": 2048, "raw_min": 2048, "raw_max": 3200},
+    {"id": 16, "D":  1, "S": 4096, "offset": 2048, "raw_min": 1920, "raw_max": 3200},
 ]
 
 PORT = "/dev/ttyACM0"
@@ -178,66 +178,86 @@ class OmxDriver:
 
 
 
-    def open_gripper(self, ts: float) -> None:
+    # def open_gripper(self, ts: float) -> None:
 
-        next_time = time.perf_counter()
+    #     next_time = time.perf_counter()
 
-        for step_idx in range(10):
+    #     for step_idx in range(10):
 
-            raw_cmd = self._motor_config[5]["raw_max"]
+    #         raw_cmd = self._motor_config[5]["raw_max"]
 
-            self._group_executor.addCmd(
-                self._motors[5].stageSetGoalPosition(raw_cmd)
-            )
+    #         self._group_executor.addCmd(
+    #             self._motors[5].stageSetGoalPosition(raw_cmd)
+    #         )
 
-            self._group_executor.executeWrite()
+    #         self._group_executor.executeWrite()
 
-            self._group_executor.clearStagedWriteCommands()
+    #         self._group_executor.clearStagedWriteCommands()
 
-            next_time += ts
+    #         next_time += ts
 
-            remaining = next_time - time.perf_counter()
+    #         remaining = next_time - time.perf_counter()
 
-            if remaining > 0:
-                time.sleep(remaining)
+    #         if remaining > 0:
+    #             time.sleep(remaining)
 
-            elif remaining < -0.005:
-                print(
-                    f"[OmxDriver] WARNING: "
-                    f"gripper open step {step_idx} overran by "
-                    f"{-remaining * 1e3:.2f} ms."
-                )
+    #         elif remaining < -0.005:
+    #             print(
+    #                 f"[OmxDriver] WARNING: "
+    #                 f"gripper open step {step_idx} overran by "
+    #                 f"{-remaining * 1e3:.2f} ms."
+    #             )
     
-    def close_gripper(self, ts: float) -> None:
+    # def close_gripper(self, ts: float) -> None:
 
-        next_time = time.perf_counter()
+    #     next_time = time.perf_counter()
 
-        for step_idx in range(10):
+    #     for step_idx in range(10):
 
-            raw_cmd = self._motor_config[5]["raw_min"]
+    #         raw_cmd = self._motor_config[5]["raw_min"]
 
-            self._group_executor.addCmd(
-                self._motors[5].stageSetGoalPosition(raw_cmd)
-            )
+    #         self._group_executor.addCmd(
+    #             self._motors[5].stageSetGoalPosition(raw_cmd)
+    #         )
 
-            self._group_executor.executeWrite()
+    #         self._group_executor.executeWrite()
 
-            self._group_executor.clearStagedWriteCommands()
+    #         self._group_executor.clearStagedWriteCommands()
 
-            next_time += ts
+    #         next_time += ts
 
-            remaining = next_time - time.perf_counter()
+    #         remaining = next_time - time.perf_counter()
 
-            if remaining > 0:
-                time.sleep(remaining)
+    #         if remaining > 0:
+    #             time.sleep(remaining)
 
-            elif remaining < -0.005:
-                print(
-                    f"[OmxDriver] WARNING: "
-                    f"gripper close step {step_idx} overran by "
-                    f"{-remaining * 1e3:.2f} ms."
-                )
+    #         elif remaining < -0.005:
+    #             print(
+    #                 f"[OmxDriver] WARNING: "
+    #                 f"gripper close step {step_idx} overran by "
+    #                 f"{-remaining * 1e3:.2f} ms."
+    #             )
 
+    def open_gripper(self) -> None:
+        raw_cmd = self._motor_config[5]["raw_max"]
+
+        self._group_executor.addCmd(
+            self._motors[5].stageSetGoalPosition(raw_cmd)
+        )
+
+        self._group_executor.executeWrite()
+        self._group_executor.clearStagedWriteCommands()
+
+
+    def close_gripper(self) -> None:
+        raw_cmd = self._motor_config[5]["raw_min"]
+
+        self._group_executor.addCmd(
+            self._motors[5].stageSetGoalPosition(raw_cmd)
+        )
+
+        self._group_executor.executeWrite()
+        self._group_executor.clearStagedWriteCommands()
 
 
     # =========================================================================

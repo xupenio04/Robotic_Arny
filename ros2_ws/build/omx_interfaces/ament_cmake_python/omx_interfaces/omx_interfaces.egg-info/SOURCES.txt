@@ -4,3 +4,7 @@ omx_interfaces.egg-info/PKG-INFO
 omx_interfaces.egg-info/SOURCES.txt
 omx_interfaces.egg-info/dependency_links.txt
 omx_interfaces.egg-info/top_level.txt
+omx_interfaces/srv/__init__.py
+omx_interfaces/srv/_execute_trajectory.py
+omx_interfaces/srv/_generate_trajectory.py
+omx_interfaces/srv/_set_gripper.py

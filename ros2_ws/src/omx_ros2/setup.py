@@ -24,7 +24,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'omx_driver_node = omx_ros2.omx_driver_node:main'
+            'omx_driver_node = omx_ros2.omx_driver_node:main',
+            'trajectory_generator_node = omx_ros2.trajectory_generator_node:main',
+            'task_supervisor_node = omx_ros2.task_supervisor_node:main',
         ],
     },
 )
