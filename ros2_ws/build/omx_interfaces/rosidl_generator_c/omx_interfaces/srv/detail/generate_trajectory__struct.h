@@ -21,17 +21,16 @@ extern "C"
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'waypoints'
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__struct.h"
-// Member 'joint_names'
-#include "rosidl_runtime_c/string.h"
+// Member 'qi'
+// Member 'qf'
+#include "rosidl_runtime_c/primitives_sequence.h"
 
 /// Struct defined in srv/GenerateTrajectory in the package omx_interfaces.
 typedef struct omx_interfaces__srv__GenerateTrajectory_Request
 {
-  trajectory_msgs__msg__JointTrajectoryPoint__Sequence waypoints;
-  rosidl_runtime_c__String__Sequence joint_names;
-  double duration;
+  rosidl_runtime_c__double__Sequence qi;
+  rosidl_runtime_c__double__Sequence qf;
+  double ts;
 } omx_interfaces__srv__GenerateTrajectory_Request;
 
 // Struct for a sequence of omx_interfaces__srv__GenerateTrajectory_Request.
@@ -50,8 +49,7 @@ typedef struct omx_interfaces__srv__GenerateTrajectory_Request__Sequence
 // Member 'trajectory'
 #include "trajectory_msgs/msg/detail/joint_trajectory__struct.h"
 // Member 'message'
-// already included above
-// #include "rosidl_runtime_c/string.h"
+#include "rosidl_runtime_c/string.h"
 
 /// Struct defined in srv/GenerateTrajectory in the package omx_interfaces.
 typedef struct omx_interfaces__srv__GenerateTrajectory_Response

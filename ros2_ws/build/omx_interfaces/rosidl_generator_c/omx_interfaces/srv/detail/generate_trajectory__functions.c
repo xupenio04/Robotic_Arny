@@ -11,10 +11,9 @@
 #include "rcutils/allocator.h"
 
 // Include directives for member types
-// Member `waypoints`
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"
-// Member `joint_names`
-#include "rosidl_runtime_c/string_functions.h"
+// Member `qi`
+// Member `qf`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 bool
 omx_interfaces__srv__GenerateTrajectory_Request__init(omx_interfaces__srv__GenerateTrajectory_Request * msg)
@@ -22,17 +21,17 @@ omx_interfaces__srv__GenerateTrajectory_Request__init(omx_interfaces__srv__Gener
   if (!msg) {
     return false;
   }
-  // waypoints
-  if (!trajectory_msgs__msg__JointTrajectoryPoint__Sequence__init(&msg->waypoints, 0)) {
+  // qi
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->qi, 0)) {
     omx_interfaces__srv__GenerateTrajectory_Request__fini(msg);
     return false;
   }
-  // joint_names
-  if (!rosidl_runtime_c__String__Sequence__init(&msg->joint_names, 0)) {
+  // qf
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->qf, 0)) {
     omx_interfaces__srv__GenerateTrajectory_Request__fini(msg);
     return false;
   }
-  // duration
+  // ts
   return true;
 }
 
@@ -42,11 +41,11 @@ omx_interfaces__srv__GenerateTrajectory_Request__fini(omx_interfaces__srv__Gener
   if (!msg) {
     return;
   }
-  // waypoints
-  trajectory_msgs__msg__JointTrajectoryPoint__Sequence__fini(&msg->waypoints);
-  // joint_names
-  rosidl_runtime_c__String__Sequence__fini(&msg->joint_names);
-  // duration
+  // qi
+  rosidl_runtime_c__double__Sequence__fini(&msg->qi);
+  // qf
+  rosidl_runtime_c__double__Sequence__fini(&msg->qf);
+  // ts
 }
 
 bool
@@ -55,20 +54,20 @@ omx_interfaces__srv__GenerateTrajectory_Request__are_equal(const omx_interfaces_
   if (!lhs || !rhs) {
     return false;
   }
-  // waypoints
-  if (!trajectory_msgs__msg__JointTrajectoryPoint__Sequence__are_equal(
-      &(lhs->waypoints), &(rhs->waypoints)))
+  // qi
+  if (!rosidl_runtime_c__double__Sequence__are_equal(
+      &(lhs->qi), &(rhs->qi)))
   {
     return false;
   }
-  // joint_names
-  if (!rosidl_runtime_c__String__Sequence__are_equal(
-      &(lhs->joint_names), &(rhs->joint_names)))
+  // qf
+  if (!rosidl_runtime_c__double__Sequence__are_equal(
+      &(lhs->qf), &(rhs->qf)))
   {
     return false;
   }
-  // duration
-  if (lhs->duration != rhs->duration) {
+  // ts
+  if (lhs->ts != rhs->ts) {
     return false;
   }
   return true;
@@ -82,20 +81,20 @@ omx_interfaces__srv__GenerateTrajectory_Request__copy(
   if (!input || !output) {
     return false;
   }
-  // waypoints
-  if (!trajectory_msgs__msg__JointTrajectoryPoint__Sequence__copy(
-      &(input->waypoints), &(output->waypoints)))
+  // qi
+  if (!rosidl_runtime_c__double__Sequence__copy(
+      &(input->qi), &(output->qi)))
   {
     return false;
   }
-  // joint_names
-  if (!rosidl_runtime_c__String__Sequence__copy(
-      &(input->joint_names), &(output->joint_names)))
+  // qf
+  if (!rosidl_runtime_c__double__Sequence__copy(
+      &(input->qf), &(output->qf)))
   {
     return false;
   }
-  // duration
-  output->duration = input->duration;
+  // ts
+  output->ts = input->ts;
   return true;
 }
 
@@ -283,8 +282,7 @@ omx_interfaces__srv__GenerateTrajectory_Request__Sequence__copy(
 // Member `trajectory`
 #include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"
 // Member `message`
-// already included above
-// #include "rosidl_runtime_c/string_functions.h"
+#include "rosidl_runtime_c/string_functions.h"
 
 bool
 omx_interfaces__srv__GenerateTrajectory_Response__init(omx_interfaces__srv__GenerateTrajectory_Response * msg)

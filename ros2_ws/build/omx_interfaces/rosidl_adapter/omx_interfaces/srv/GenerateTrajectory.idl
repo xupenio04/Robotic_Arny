@@ -3,16 +3,17 @@
 // generated code does not contain a copyright notice
 
 #include "trajectory_msgs/msg/JointTrajectory.idl"
-#include "trajectory_msgs/msg/JointTrajectoryPoint.idl"
 
 module omx_interfaces {
   module srv {
+    @verbatim (language="comment", text=
+      "Request")
     struct GenerateTrajectory_Request {
-      sequence<trajectory_msgs::msg::JointTrajectoryPoint> waypoints;
+      sequence<double> qi;
 
-      sequence<string> joint_names;
+      sequence<double> qf;
 
-      double duration;
+      double ts;
     };
     @verbatim (language="comment", text=
       "Response")

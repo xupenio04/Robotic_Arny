@@ -1,0 +1,249 @@
+[0.013s] Invoking command in '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv_omx) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(venv_omx) /usr/bin/cmake --build /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces -- -j12 -l12
+[0.039s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.123s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.134s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.138s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.171s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.200s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.203s] -- Found std_msgs: 5.3.7 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.231s] -- Found trajectory_msgs: 5.3.7 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[0.521s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.668s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.866s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.867s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[1.079s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[1.160s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.178s] -- Configuring done (1.1s)
+[1.230s] -- Generating done (0.0s)
+[1.242s] -- Build files have been written to: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces
+[1.273s] [  3%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[1.274s] [  3%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[1.281s] [  3%] Built target ament_cmake_python_symlink_omx_interfaces
+[1.468s] running egg_info
+[1.486s] writing omx_interfaces.egg-info/PKG-INFO
+[1.486s] writing dependency_links to omx_interfaces.egg-info/dependency_links.txt
+[1.486s] writing top-level names to omx_interfaces.egg-info/top_level.txt
+[1.488s] [  3%] Built target omx_interfaces__rosidl_generator_type_description
+[1.498s] [  5%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.507s] [  5%] Built target omx_interfaces__rs
+[1.507s] [  7%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.543s] reading manifest file 'omx_interfaces.egg-info/SOURCES.txt'
+[1.544s] writing manifest file 'omx_interfaces.egg-info/SOURCES.txt'
+[1.569s] [  7%] Built target ament_cmake_python_build_omx_interfaces_egg
+[1.888s] [  7%] Built target omx_interfaces__cpp
+[1.971s] [ 16%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/set_gripper__description.c.o[0m
+[1.971s] [ 16%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/execute_trajectory__description.c.o[0m
+[1.971s] [ 16%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/execute_trajectory__functions.c.o[0m
+[1.971s] [ 16%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/execute_trajectory__type_support.c.o[0m
+[1.971s] [ 16%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__description.c.o[0m
+[1.974s] [ 18%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__type_support.c.o[0m
+[1.975s] [ 20%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__functions.c.o[0m
+[1.978s] [ 21%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/set_gripper__functions.c.o[0m
+[1.978s] [ 23%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfaces/srv/detail/set_gripper__type_support.c.o[0m
+[2.083s] [ 25%] [32m[1mLinking C shared library libomx_interfaces__rosidl_generator_c.so[0m
+[2.127s] [ 25%] Built target omx_interfaces__rosidl_generator_c
+[2.138s] [ 32%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.138s] [ 32%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.138s] [ 32%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.139s] [ 32%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.139s] [ 34%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.139s] [ 36%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.540s] [ 40%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omx_interfaces/srv/generate_trajectory__type_support.cpp.o[0m
+[2.540s] [ 40%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omx_interfaces/srv/set_gripper__type_support.cpp.o[0m
+[2.540s] [ 41%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/omx_interfaces/srv/execute_trajectory__type_support.cpp.o[0m
+[2.574s] [ 43%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/omx_interfaces/srv/execute_trajectory__type_support.cpp.o[0m
+[2.575s] [ 45%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/omx_interfaces/srv/generate_trajectory__type_support.cpp.o[0m
+[2.575s] [ 47%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/omx_interfaces/srv/set_gripper__type_support.cpp.o[0m
+[2.670s] [ 49%] [32m[1mLinking CXX shared library libomx_interfaces__rosidl_typesupport_c.so[0m
+[2.685s] [ 52%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omx_interfaces/srv/detail/set_gripper__type_support.cpp.o[0m
+[2.685s] [ 52%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omx_interfaces/srv/detail/execute_trajectory__type_support.cpp.o[0m
+[2.689s] [ 54%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/omx_interfaces/srv/detail/generate_trajectory__type_support.cpp.o[0m
+[2.756s] [ 58%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/generate_trajectory__type_support.c.o[0m
+[2.756s] [ 58%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/set_gripper__type_support.c.o[0m
+[2.769s] [ 60%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/omx_interfaces/srv/detail/execute_trajectory__type_support.c.o[0m
+[2.771s] [ 60%] Built target omx_interfaces__rosidl_typesupport_c
+[2.887s] [ 61%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omx_interfaces/srv/detail/dds_fastrtps/generate_trajectory__type_support.cpp.o[0m
+[2.887s] [ 63%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omx_interfaces/srv/detail/dds_fastrtps/execute_trajectory__type_support.cpp.o[0m
+[2.894s] [ 65%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/omx_interfaces/srv/detail/dds_fastrtps/set_gripper__type_support.cpp.o[0m
+[2.902s] [ 67%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omx_interfaces/srv/detail/execute_trajectory__type_support_c.cpp.o[0m
+[2.903s] [ 69%] [32m[1mLinking C shared library libomx_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.906s] [ 70%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omx_interfaces/srv/detail/generate_trajectory__type_support_c.cpp.o[0m
+[3.032s] [ 70%] Built target omx_interfaces__rosidl_typesupport_introspection_c
+[3.068s] [ 72%] [32mBuilding CXX object CMakeFiles/omx_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/omx_interfaces/srv/detail/set_gripper__type_support_c.cpp.o[0m
+[3.351s] [ 74%] [32m[1mLinking CXX shared library libomx_interfaces__rosidl_typesupport_cpp.so[0m
+[3.598s] [ 74%] Built target omx_interfaces__rosidl_typesupport_cpp
+[3.781s] [ 76%] [32m[1mLinking CXX shared library libomx_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[3.892s] [ 76%] Built target omx_interfaces__rosidl_typesupport_introspection_cpp
+[3.895s] [ 78%] [32m[1mLinking CXX shared library libomx_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[3.966s] [ 78%] Built target omx_interfaces__rosidl_typesupport_fastrtps_c
+[3.973s] [ 80%] [32m[1mLinking CXX shared library libomx_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.042s] [ 80%] Built target omx_interfaces__rosidl_typesupport_fastrtps_cpp
+[4.059s] [ 80%] Built target omx_interfaces
+[4.075s] [ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.618s] [ 81%] Built target omx_interfaces__py
+[4.643s] [ 83%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_py.dir/rosidl_generator_py/omx_interfaces/srv/_execute_trajectory_s.c.o[0m
+[4.643s] [ 85%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_py.dir/rosidl_generator_py/omx_interfaces/srv/_set_gripper_s.c.o[0m
+[4.643s] [ 87%] [32mBuilding C object CMakeFiles/omx_interfaces__rosidl_generator_py.dir/rosidl_generator_py/omx_interfaces/srv/_generate_trajectory_s.c.o[0m
+[4.793s] [ 89%] [32m[1mLinking C shared library libomx_interfaces__rosidl_generator_py.so[0m
+[4.833s] [ 89%] Built target omx_interfaces__rosidl_generator_py
+[4.854s] [ 94%] [32mBuilding C object CMakeFiles/omx_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/omx_interfaces/_omx_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.855s] [ 94%] [32mBuilding C object CMakeFiles/omx_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/omx_interfaces/_omx_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.855s] [ 94%] [32mBuilding C object CMakeFiles/omx_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/omx_interfaces/_omx_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[4.957s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/omx_interfaces/omx_interfaces_s__rosidl_typesupport_c.so[0m
+[4.957s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/omx_interfaces/omx_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[4.960s] [100%] [32m[1mLinking C shared module rosidl_generator_py/omx_interfaces/omx_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[4.985s] [100%] Built target omx_interfaces_s__rosidl_typesupport_introspection_c
+[4.985s] [100%] Built target omx_interfaces_s__rosidl_typesupport_c
+[4.988s] [100%] Built target omx_interfaces_s__rosidl_typesupport_fastrtps_c
+[4.999s] Invoked command in '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv_omx) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(venv_omx) /usr/bin/cmake --build /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces -- -j12 -l12
+[5.007s] Invoking command in '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv_omx) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(venv_omx) /usr/bin/cmake --install /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces
+[5.014s] -- Install configuration: ""
+[5.015s] -- Execute custom install script
+[5.015s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/ament_index/resource_index/rosidl_interfaces/omx_interfaces
+[5.015s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/GenerateTrajectory.json
+[5.016s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/ExecuteTrajectory.json
+[5.016s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/SetGripper.json
+[5.016s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/msg/rosidl_generator_c__visibility_control.h
+[5.016s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__functions.h
+[5.017s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__struct.h
+[5.017s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__type_support.h
+[5.017s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__functions.h
+[5.017s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__struct.h
+[5.017s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__type_support.h
+[5.017s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__functions.h
+[5.017s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__struct.h
+[5.018s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__type_support.h
+[5.018s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/execute_trajectory.h
+[5.018s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/generate_trajectory.h
+[5.018s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/set_gripper.h
+[5.018s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/library_path.sh
+[5.018s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/library_path.dsv
+[5.019s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[5.019s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__rosidl_typesupport_fastrtps_c.h
+[5.019s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_fastrtps_c.h
+[5.019s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__rosidl_typesupport_fastrtps_c.h
+[5.020s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[5.020s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__rosidl_typesupport_introspection_c.h
+[5.020s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_introspection_c.h
+[5.020s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__rosidl_typesupport_introspection_c.h
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__builder.hpp
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__struct.hpp
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__traits.hpp
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__type_support.hpp
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__builder.hpp
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__struct.hpp
+[5.021s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__traits.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__type_support.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__builder.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__struct.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__traits.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__type_support.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/execute_trajectory.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/generate_trajectory.hpp
+[5.022s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/set_gripper.hpp
+[5.023s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[5.023s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__rosidl_typesupport_fastrtps_cpp.hpp
+[5.023s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_fastrtps_cpp.hpp
+[5.023s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__rosidl_typesupport_fastrtps_cpp.hpp
+[5.023s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/execute_trajectory__rosidl_typesupport_introspection_cpp.hpp
+[5.024s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/generate_trajectory__rosidl_typesupport_introspection_cpp.hpp
+[5.024s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/include/omx_interfaces/omx_interfaces/srv/detail/set_gripper__rosidl_typesupport_introspection_cpp.hpp
+[5.024s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/pythonpath.sh
+[5.024s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/pythonpath.dsv
+[5.024s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+[5.024s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+[5.024s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+[5.025s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+[5.025s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/__init__.py
+[5.025s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/_omx_interfaces_s.ep.rosidl_typesupport_c.c
+[5.025s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/_omx_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[5.025s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/_omx_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[5.025s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/omx_interfaces_s__rosidl_typesupport_c.so
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/omx_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/omx_interfaces_s__rosidl_typesupport_introspection_c.so
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/__init__.py
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_execute_trajectory.py
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_execute_trajectory_s.c
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_generate_trajectory.py
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_generate_trajectory_s.c
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_set_gripper.py
+[5.026s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_set_gripper_s.c
+[5.027s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/omx_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[5.027s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/omx_interfaces_s__rosidl_typesupport_introspection_c.so
+[5.027s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/omx_interfaces_s__rosidl_typesupport_c.so
+[5.027s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/ament_index/resource_index/rust_packages/omx_interfaces
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/rust/Cargo.toml
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/rust/build.rs
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/rust/src/lib.rs
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/rust/src/srv.rs
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/rust/src/srv/rmw.rs
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/GenerateTrajectory.idl
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/ExecuteTrajectory.idl
+[5.028s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/SetGripper.idl
+[5.029s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/GenerateTrajectory.srv
+[5.029s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/ExecuteTrajectory.srv
+[5.029s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/srv/SetGripper.srv
+[5.029s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/ament_index/resource_index/package_run_dependencies/omx_interfaces
+[5.029s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/ament_index/resource_index/parent_prefix_path/omx_interfaces
+[5.029s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/ament_prefix_path.sh
+[5.029s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/ament_prefix_path.dsv
+[5.030s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/path.sh
+[5.030s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/environment/path.dsv
+[5.030s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/local_setup.bash
+[5.030s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/local_setup.sh
+[5.030s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/local_setup.zsh
+[5.030s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/local_setup.dsv
+[5.030s] -- Symlinking: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/package.dsv
+[5.038s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/ament_index/resource_index/packages/omx_interfaces
+[5.038s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/rosidl_cmake-extras.cmake
+[5.038s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.039s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[5.039s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[5.039s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[5.039s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[5.039s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[5.039s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfacesConfig.cmake
+[5.040s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfacesConfig-version.cmake
+[5.040s] -- Up-to-date symlink: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/package.xml
+[5.040s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_generator_c.so
+[5.040s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_generator_c.so" to ""
+[5.041s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_fastrtps_c.so
+[5.041s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[5.041s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_introspection_c.so
+[5.042s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[5.042s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_c.so
+[5.042s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_c.so" to ""
+[5.042s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[5.043s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[5.043s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_introspection_cpp.so
+[5.044s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[5.045s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_cpp.so
+[5.045s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_typesupport_cpp.so" to ""
+[5.081s] Listing '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces'...
+[5.081s] Compiling '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/__init__.py'...
+[5.081s] Listing '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv'...
+[5.081s] Compiling '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/__init__.py'...
+[5.081s] Compiling '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_execute_trajectory.py'...
+[5.081s] Compiling '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_generate_trajectory.py'...
+[5.081s] Compiling '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/python3.12/site-packages/omx_interfaces/srv/_set_gripper.py'...
+[5.085s] -- Installing: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_generator_py.so
+[5.086s] -- Set non-toolchain portion of runtime path of "/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/lib/libomx_interfaces__rosidl_generator_py.so" to ""
+[5.086s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_generator_cExport.cmake
+[5.086s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_generator_cExport-noconfig.cmake
+[5.086s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[5.086s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[5.086s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[5.086s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[5.086s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_cExport.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_generator_cppExport.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_cppExport.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/omx_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_generator_pyExport.cmake
+[5.087s] -- Up-to-date: /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_interfaces/share/omx_interfaces/cmake/export_omx_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[5.089s] Invoked command in '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv_omx) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(venv_omx) /usr/bin/cmake --install /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces

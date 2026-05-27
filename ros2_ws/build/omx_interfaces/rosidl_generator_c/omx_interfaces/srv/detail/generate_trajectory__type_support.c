@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "omx_interfaces/srv/detail/generate_trajectory__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "omx_interfaces/srv/detail/generate_trajectory__functions.h"
 #include "omx_interfaces/srv/detail/generate_trajectory__struct.h"
 #include "omx_interfaces/srv/detail/generate_trajectory__type_support.h"
 

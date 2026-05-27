@@ -12,6 +12,10 @@ ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
 
 # Import statements for member types
 
+# Member 'qi'
+# Member 'qf'
+import array  # noqa: E402, I100
+
 import builtins  # noqa: E402, I100
 
 import math  # noqa: E402, I100
@@ -51,10 +55,6 @@ class Metaclass_GenerateTrajectory_Request(type):
             cls._TYPE_SUPPORT = module.type_support_msg__srv__generate_trajectory__request
             cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__srv__generate_trajectory__request
 
-            from trajectory_msgs.msg import JointTrajectoryPoint
-            if JointTrajectoryPoint.__class__._TYPE_SUPPORT is None:
-                JointTrajectoryPoint.__class__.__import_type_support__()
-
     @classmethod
     def __prepare__(cls, name, bases, **kwargs):
         # list constant names here so that they appear in the help text of
@@ -68,23 +68,23 @@ class GenerateTrajectory_Request(metaclass=Metaclass_GenerateTrajectory_Request)
     """Message class 'GenerateTrajectory_Request'."""
 
     __slots__ = [
-        '_waypoints',
-        '_joint_names',
-        '_duration',
+        '_qi',
+        '_qf',
+        '_ts',
         '_check_fields',
     ]
 
     _fields_and_field_types = {
-        'waypoints': 'sequence<trajectory_msgs/JointTrajectoryPoint>',
-        'joint_names': 'sequence<string>',
-        'duration': 'double',
+        'qi': 'sequence<double>',
+        'qf': 'sequence<double>',
+        'ts': 'double',
     }
 
     # This attribute is used to store an rosidl_parser.definition variable
     # related to the data type of each of the components the message.
     SLOT_TYPES = (
-        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['trajectory_msgs', 'msg'], 'JointTrajectoryPoint')),  # noqa: E501
-        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.UnboundedString()),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
     )
 
@@ -97,9 +97,9 @@ class GenerateTrajectory_Request(metaclass=Metaclass_GenerateTrajectory_Request)
             assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
                 'Invalid arguments passed to constructor: %s' % \
                 ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.waypoints = kwargs.get('waypoints', [])
-        self.joint_names = kwargs.get('joint_names', [])
-        self.duration = kwargs.get('duration', float())
+        self.qi = array.array('d', kwargs.get('qi', []))
+        self.qf = array.array('d', kwargs.get('qf', []))
+        self.ts = kwargs.get('ts', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -131,11 +131,11 @@ class GenerateTrajectory_Request(metaclass=Metaclass_GenerateTrajectory_Request)
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.waypoints != other.waypoints:
+        if self.qi != other.qi:
             return False
-        if self.joint_names != other.joint_names:
+        if self.qf != other.qf:
             return False
-        if self.duration != other.duration:
+        if self.ts != other.ts:
             return False
         return True
 
@@ -145,14 +145,18 @@ class GenerateTrajectory_Request(metaclass=Metaclass_GenerateTrajectory_Request)
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def waypoints(self):
-        """Message field 'waypoints'."""
-        return self._waypoints
+    def qi(self):
+        """Message field 'qi'."""
+        return self._qi
 
-    @waypoints.setter
-    def waypoints(self, value):
+    @qi.setter
+    def qi(self, value):
         if self._check_fields:
-            from trajectory_msgs.msg import JointTrajectoryPoint
+            if isinstance(value, array.array):
+                assert value.typecode == 'd', \
+                    "The 'qi' array.array() must have the type code of 'd'"
+                self._qi = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -163,19 +167,24 @@ class GenerateTrajectory_Request(metaclass=Metaclass_GenerateTrajectory_Request)
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 all(isinstance(v, JointTrajectoryPoint) for v in value) and
-                 True), \
-                "The 'waypoints' field must be a set or sequence and each value of type 'JointTrajectoryPoint'"
-        self._waypoints = value
+                 all(isinstance(v, float) for v in value) and
+                 all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
+                "The 'qi' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._qi = array.array('d', value)
 
     @builtins.property
-    def joint_names(self):
-        """Message field 'joint_names'."""
-        return self._joint_names
+    def qf(self):
+        """Message field 'qf'."""
+        return self._qf
 
-    @joint_names.setter
-    def joint_names(self, value):
+    @qf.setter
+    def qf(self, value):
         if self._check_fields:
+            if isinstance(value, array.array):
+                assert value.typecode == 'd', \
+                    "The 'qf' array.array() must have the type code of 'd'"
+                self._qf = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -186,25 +195,25 @@ class GenerateTrajectory_Request(metaclass=Metaclass_GenerateTrajectory_Request)
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 all(isinstance(v, str) for v in value) and
-                 True), \
-                "The 'joint_names' field must be a set or sequence and each value of type 'str'"
-        self._joint_names = value
+                 all(isinstance(v, float) for v in value) and
+                 all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
+                "The 'qf' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._qf = array.array('d', value)
 
     @builtins.property
-    def duration(self):
-        """Message field 'duration'."""
-        return self._duration
+    def ts(self):
+        """Message field 'ts'."""
+        return self._ts
 
-    @duration.setter
-    def duration(self, value):
+    @ts.setter
+    def ts(self, value):
         if self._check_fields:
             assert \
                 isinstance(value, float), \
-                "The 'duration' field must be of type 'float'"
+                "The 'ts' field must be of type 'float'"
             assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
-                "The 'duration' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
-        self._duration = value
+                "The 'ts' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._ts = value
 
 
 # Import statements for member types

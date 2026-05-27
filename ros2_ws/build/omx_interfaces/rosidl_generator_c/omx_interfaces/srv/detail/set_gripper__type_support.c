@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "omx_interfaces/srv/detail/set_gripper__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "omx_interfaces/srv/detail/set_gripper__struct.h"
 #include "omx_interfaces/srv/detail/set_gripper__functions.h"
 #include "omx_interfaces/srv/detail/set_gripper__type_support.h"
 

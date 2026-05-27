@@ -36,52 +36,10 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/string.h"  // joint_names
-#include "rosidl_runtime_c/string_functions.h"  // joint_names
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"  // waypoints
+#include "rosidl_runtime_c/primitives_sequence.h"  // qf, qi
+#include "rosidl_runtime_c/primitives_sequence_functions.h"  // qf, qi
 
 // forward declare type support functions
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-bool cdr_serialize_trajectory_msgs__msg__JointTrajectoryPoint(
-  const trajectory_msgs__msg__JointTrajectoryPoint * ros_message,
-  eprosima::fastcdr::Cdr & cdr);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-bool cdr_deserialize_trajectory_msgs__msg__JointTrajectoryPoint(
-  eprosima::fastcdr::Cdr & cdr,
-  trajectory_msgs__msg__JointTrajectoryPoint * ros_message);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-size_t get_serialized_size_trajectory_msgs__msg__JointTrajectoryPoint(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-size_t max_serialized_size_trajectory_msgs__msg__JointTrajectoryPoint(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-bool cdr_serialize_key_trajectory_msgs__msg__JointTrajectoryPoint(
-  const trajectory_msgs__msg__JointTrajectoryPoint * ros_message,
-  eprosima::fastcdr::Cdr & cdr);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-size_t get_serialized_size_key_trajectory_msgs__msg__JointTrajectoryPoint(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-size_t max_serialized_size_key_trajectory_msgs__msg__JointTrajectoryPoint(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_omx_interfaces
-const rosidl_message_type_support_t *
-  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, trajectory_msgs, msg, JointTrajectoryPoint)();
 
 
 using _GenerateTrajectory_Request__ros_msg_type = omx_interfaces__srv__GenerateTrajectory_Request;
@@ -92,39 +50,25 @@ bool cdr_serialize_omx_interfaces__srv__GenerateTrajectory_Request(
   const omx_interfaces__srv__GenerateTrajectory_Request * ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Field name: waypoints
+  // Field name: qi
   {
-    size_t size = ros_message->waypoints.size;
-    auto array_ptr = ros_message->waypoints.data;
+    size_t size = ros_message->qi.size;
+    auto array_ptr = ros_message->qi.data;
     cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; ++i) {
-      cdr_serialize_trajectory_msgs__msg__JointTrajectoryPoint(
-        &array_ptr[i], cdr);
-    }
+    cdr.serialize_array(array_ptr, size);
   }
 
-  // Field name: joint_names
+  // Field name: qf
   {
-    size_t size = ros_message->joint_names.size;
-    auto array_ptr = ros_message->joint_names.data;
+    size_t size = ros_message->qf.size;
+    auto array_ptr = ros_message->qf.data;
     cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; ++i) {
-      const rosidl_runtime_c__String * str = &array_ptr[i];
-      if (str->capacity == 0 || str->capacity <= str->size) {
-        fprintf(stderr, "string capacity not greater than size\n");
-        return false;
-      }
-      if (str->data[str->size] != '\0') {
-        fprintf(stderr, "string not null-terminated\n");
-        return false;
-      }
-      cdr << str->data;
-    }
+    cdr.serialize_array(array_ptr, size);
   }
 
-  // Field name: duration
+  // Field name: ts
   {
-    cdr << ros_message->duration;
+    cdr << ros_message->ts;
   }
 
   return true;
@@ -135,7 +79,7 @@ bool cdr_deserialize_omx_interfaces__srv__GenerateTrajectory_Request(
   eprosima::fastcdr::Cdr & cdr,
   omx_interfaces__srv__GenerateTrajectory_Request * ros_message)
 {
-  // Field name: waypoints
+  // Field name: qi
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
@@ -150,20 +94,18 @@ bool cdr_deserialize_omx_interfaces__srv__GenerateTrajectory_Request(
       return false;
     }
 
-    if (ros_message->waypoints.data) {
-      trajectory_msgs__msg__JointTrajectoryPoint__Sequence__fini(&ros_message->waypoints);
+    if (ros_message->qi.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->qi);
     }
-    if (!trajectory_msgs__msg__JointTrajectoryPoint__Sequence__init(&ros_message->waypoints, size)) {
-      fprintf(stderr, "failed to create array for field 'waypoints'");
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->qi, size)) {
+      fprintf(stderr, "failed to create array for field 'qi'");
       return false;
     }
-    auto array_ptr = ros_message->waypoints.data;
-    for (size_t i = 0; i < size; ++i) {
-      cdr_deserialize_trajectory_msgs__msg__JointTrajectoryPoint(cdr, &array_ptr[i]);
-    }
+    auto array_ptr = ros_message->qi.data;
+    cdr.deserialize_array(array_ptr, size);
   }
 
-  // Field name: joint_names
+  // Field name: qf
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
@@ -178,34 +120,20 @@ bool cdr_deserialize_omx_interfaces__srv__GenerateTrajectory_Request(
       return false;
     }
 
-    if (ros_message->joint_names.data) {
-      rosidl_runtime_c__String__Sequence__fini(&ros_message->joint_names);
+    if (ros_message->qf.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->qf);
     }
-    if (!rosidl_runtime_c__String__Sequence__init(&ros_message->joint_names, size)) {
-      fprintf(stderr, "failed to create array for field 'joint_names'");
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->qf, size)) {
+      fprintf(stderr, "failed to create array for field 'qf'");
       return false;
     }
-    auto array_ptr = ros_message->joint_names.data;
-    for (size_t i = 0; i < size; ++i) {
-      std::string tmp;
-      cdr >> tmp;
-      auto & ros_i = array_ptr[i];
-      if (!ros_i.data) {
-        rosidl_runtime_c__String__init(&ros_i);
-      }
-      bool succeeded = rosidl_runtime_c__String__assign(
-        &ros_i,
-        tmp.c_str());
-      if (!succeeded) {
-        fprintf(stderr, "failed to assign string into field 'joint_names'\n");
-        return false;
-      }
-    }
+    auto array_ptr = ros_message->qf.data;
+    cdr.deserialize_array(array_ptr, size);
   }
 
-  // Field name: duration
+  // Field name: ts
   {
-    cdr >> ros_message->duration;
+    cdr >> ros_message->ts;
   }
 
   return true;
@@ -226,34 +154,33 @@ size_t get_serialized_size_omx_interfaces__srv__GenerateTrajectory_Request(
   (void)padding;
   (void)wchar_size;
 
-  // Field name: waypoints
+  // Field name: qi
   {
-    size_t array_size = ros_message->waypoints.size;
-    auto array_ptr = ros_message->waypoints.data;
+    size_t array_size = ros_message->qi.size;
+    auto array_ptr = ros_message->qi.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += get_serialized_size_trajectory_msgs__msg__JointTrajectoryPoint(
-        &array_ptr[index], current_alignment);
-    }
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Field name: joint_names
+  // Field name: qf
   {
-    size_t array_size = ros_message->joint_names.size;
-    auto array_ptr = ros_message->joint_names.data;
+    size_t array_size = ros_message->qf.size;
+    auto array_ptr = ros_message->qf.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        (array_ptr[index].size + 1);
-    }
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Field name: duration
+  // Field name: ts
   {
-    size_t item_size = sizeof(ros_message->duration);
+    size_t item_size = sizeof(ros_message->ts);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -280,45 +207,31 @@ size_t max_serialized_size_omx_interfaces__srv__GenerateTrajectory_Request(
   full_bounded = true;
   is_plain = true;
 
-  // Field name: waypoints
+  // Field name: qi
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    last_member_size = 0;
-    for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size;
-      inner_size =
-        max_serialized_size_trajectory_msgs__msg__JointTrajectoryPoint(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Field name: joint_names
+  // Field name: qf
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Field name: duration
+  // Field name: ts
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint64_t);
@@ -335,7 +248,7 @@ size_t max_serialized_size_omx_interfaces__srv__GenerateTrajectory_Request(
     using DataType = omx_interfaces__srv__GenerateTrajectory_Request;
     is_plain =
       (
-      offsetof(DataType, duration) +
+      offsetof(DataType, ts) +
       last_member_size
       ) == ret_val;
   }
@@ -347,39 +260,25 @@ bool cdr_serialize_key_omx_interfaces__srv__GenerateTrajectory_Request(
   const omx_interfaces__srv__GenerateTrajectory_Request * ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Field name: waypoints
+  // Field name: qi
   {
-    size_t size = ros_message->waypoints.size;
-    auto array_ptr = ros_message->waypoints.data;
+    size_t size = ros_message->qi.size;
+    auto array_ptr = ros_message->qi.data;
     cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; ++i) {
-      cdr_serialize_key_trajectory_msgs__msg__JointTrajectoryPoint(
-        &array_ptr[i], cdr);
-    }
+    cdr.serialize_array(array_ptr, size);
   }
 
-  // Field name: joint_names
+  // Field name: qf
   {
-    size_t size = ros_message->joint_names.size;
-    auto array_ptr = ros_message->joint_names.data;
+    size_t size = ros_message->qf.size;
+    auto array_ptr = ros_message->qf.data;
     cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; ++i) {
-      const rosidl_runtime_c__String * str = &array_ptr[i];
-      if (str->capacity == 0 || str->capacity <= str->size) {
-        fprintf(stderr, "string capacity not greater than size\n");
-        return false;
-      }
-      if (str->data[str->size] != '\0') {
-        fprintf(stderr, "string not null-terminated\n");
-        return false;
-      }
-      cdr << str->data;
-    }
+    cdr.serialize_array(array_ptr, size);
   }
 
-  // Field name: duration
+  // Field name: ts
   {
-    cdr << ros_message->duration;
+    cdr << ros_message->ts;
   }
 
   return true;
@@ -400,34 +299,33 @@ size_t get_serialized_size_key_omx_interfaces__srv__GenerateTrajectory_Request(
   (void)padding;
   (void)wchar_size;
 
-  // Field name: waypoints
+  // Field name: qi
   {
-    size_t array_size = ros_message->waypoints.size;
-    auto array_ptr = ros_message->waypoints.data;
+    size_t array_size = ros_message->qi.size;
+    auto array_ptr = ros_message->qi.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += get_serialized_size_key_trajectory_msgs__msg__JointTrajectoryPoint(
-        &array_ptr[index], current_alignment);
-    }
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Field name: joint_names
+  // Field name: qf
   {
-    size_t array_size = ros_message->joint_names.size;
-    auto array_ptr = ros_message->joint_names.data;
+    size_t array_size = ros_message->qf.size;
+    auto array_ptr = ros_message->qf.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        (array_ptr[index].size + 1);
-    }
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Field name: duration
+  // Field name: ts
   {
-    size_t item_size = sizeof(ros_message->duration);
+    size_t item_size = sizeof(ros_message->ts);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -452,45 +350,31 @@ size_t max_serialized_size_key_omx_interfaces__srv__GenerateTrajectory_Request(
 
   full_bounded = true;
   is_plain = true;
-  // Field name: waypoints
+  // Field name: qi
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    last_member_size = 0;
-    for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size;
-      inner_size =
-        max_serialized_size_key_trajectory_msgs__msg__JointTrajectoryPoint(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Field name: joint_names
+  // Field name: qf
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Field name: duration
+  // Field name: ts
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint64_t);
@@ -506,7 +390,7 @@ size_t max_serialized_size_key_omx_interfaces__srv__GenerateTrajectory_Request(
     using DataType = omx_interfaces__srv__GenerateTrajectory_Request;
     is_plain =
       (
-      offsetof(DataType, duration) +
+      offsetof(DataType, ts) +
       last_member_size
       ) == ret_val;
   }
@@ -635,10 +519,8 @@ extern "C"
 {
 #endif
 
-// already included above
-// #include "rosidl_runtime_c/string.h"  // message
-// already included above
-// #include "rosidl_runtime_c/string_functions.h"  // message
+#include "rosidl_runtime_c/string.h"  // message
+#include "rosidl_runtime_c/string_functions.h"  // message
 #include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"  // trajectory
 
 // forward declare type support functions

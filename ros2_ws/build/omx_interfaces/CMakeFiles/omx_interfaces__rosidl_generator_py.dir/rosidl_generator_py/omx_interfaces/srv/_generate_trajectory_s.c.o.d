@@ -210,30 +210,25 @@ CMakeFiles/omx_interfaces__rosidl_generator_py.dir/rosidl_generator_py/omx_inter
  /usr/include/python3.12/cpython/pyfpe.h \
  /usr/include/python3.12/tracemalloc.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/ndarrayobject.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/ndarraytypes.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_common.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/numpyconfig.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/_numpyconfig.h \
- /usr/include/complex.h /usr/include/x86_64-linux-gnu/bits/mathdef.h \
- /usr/include/x86_64-linux-gnu/bits/cmathcalls.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_endian.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_cpu.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/utils.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/_neighborhood_iterator_imp.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/dtype_api.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/__multiarray_api.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/_public_dtype_api_table.h \
- /home/robot/venv_omx/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_2_compat.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/ndarrayobject.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/ndarraytypes.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_common.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/numpyconfig.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/_numpyconfig.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_endian.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_cpu.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/utils.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h \
+ /usr/lib/python3/dist-packages/numpy/core/include/numpy/__multiarray_api.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
  /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__struct.h \
- /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
- /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.h \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__struct.h \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
+ /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.h \
+ /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.h \
  /opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.h \
  /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__functions.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
@@ -254,6 +249,4 @@ CMakeFiles/omx_interfaces__rosidl_generator_py.dir/rosidl_generator_py/omx_inter
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
  /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_interfaces/rosidl_generator_c/omx_interfaces/msg/rosidl_generator_c__visibility_control.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
- /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__functions.h \
- /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/rosidl_generator_c__visibility_control.h
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h

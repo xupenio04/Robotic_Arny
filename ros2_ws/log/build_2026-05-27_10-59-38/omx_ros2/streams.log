@@ -1,0 +1,29 @@
+[0.676s] Invoking command in '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/src/omx_ros2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv_omx) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv_omx) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/omx_ros2 build --build-base /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build install --record /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/install.log --single-version-externally-managed install_data
+[0.889s] running egg_info
+[0.907s] writing ../../build/omx_ros2/omx_ros2.egg-info/PKG-INFO
+[0.907s] writing dependency_links to ../../build/omx_ros2/omx_ros2.egg-info/dependency_links.txt
+[0.907s] writing entry points to ../../build/omx_ros2/omx_ros2.egg-info/entry_points.txt
+[0.907s] writing requirements to ../../build/omx_ros2/omx_ros2.egg-info/requires.txt
+[0.907s] writing top-level names to ../../build/omx_ros2/omx_ros2.egg-info/top_level.txt
+[0.940s] reading manifest file '../../build/omx_ros2/omx_ros2.egg-info/SOURCES.txt'
+[0.940s] adding license file 'LICENSE'
+[0.941s] writing manifest file '../../build/omx_ros2/omx_ros2.egg-info/SOURCES.txt'
+[0.941s] running build
+[0.941s] running build_py
+[0.941s] copying omx_ros2/omx_driver.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+[0.941s] copying omx_ros2/omx_driver_node.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+[0.942s] running install
+[0.946s] running install_lib
+[0.964s] copying /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2/omx_driver.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2
+[0.964s] byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/omx_driver.py to omx_driver.cpython-312.pyc
+[0.966s] byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/omx_driver_node.py to omx_driver_node.cpython-312.pyc
+[0.967s] running install_data
+[0.967s] running install_egg_info
+[0.984s] removing '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info' (and everything under it)
+[0.984s] Copying ../../build/omx_ros2/omx_ros2.egg-info to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info
+[0.985s] running install_scripts
+[1.095s] Installing omx_driver_node script to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2
+[1.095s] Installing task_supervisor_node script to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2
+[1.095s] Installing trajectory_generator_node script to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2
+[1.096s] writing list of installed files to '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/install.log'
+[1.118s] Invoked command in '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/src/omx_ros2' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv_omx) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv_omx) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/omx_ros2 build --build-base /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build install --record /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/install.log --single-version-externally-managed install_data

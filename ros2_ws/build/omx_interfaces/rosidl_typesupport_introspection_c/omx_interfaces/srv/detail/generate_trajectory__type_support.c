@@ -13,12 +13,9 @@
 
 
 // Include directives for member types
-// Member `waypoints`
-#include "trajectory_msgs/msg/joint_trajectory_point.h"
-// Member `waypoints`
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__rosidl_typesupport_introspection_c.h"
-// Member `joint_names`
-#include "rosidl_runtime_c/string_functions.h"
+// Member `qi`
+// Member `qf`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -39,155 +36,155 @@ void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introsp
   omx_interfaces__srv__GenerateTrajectory_Request__fini(message_memory);
 }
 
-size_t omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__waypoints(
+size_t omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__qi(
   const void * untyped_member)
 {
-  const trajectory_msgs__msg__JointTrajectoryPoint__Sequence * member =
-    (const trajectory_msgs__msg__JointTrajectoryPoint__Sequence *)(untyped_member);
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
   return member->size;
 }
 
-const void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__waypoints(
+const void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__qi(
   const void * untyped_member, size_t index)
 {
-  const trajectory_msgs__msg__JointTrajectoryPoint__Sequence * member =
-    (const trajectory_msgs__msg__JointTrajectoryPoint__Sequence *)(untyped_member);
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
   return &member->data[index];
 }
 
-void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__waypoints(
+void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__qi(
   void * untyped_member, size_t index)
 {
-  trajectory_msgs__msg__JointTrajectoryPoint__Sequence * member =
-    (trajectory_msgs__msg__JointTrajectoryPoint__Sequence *)(untyped_member);
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
   return &member->data[index];
 }
 
-void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__waypoints(
+void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__qi(
   const void * untyped_member, size_t index, void * untyped_value)
 {
-  const trajectory_msgs__msg__JointTrajectoryPoint * item =
-    ((const trajectory_msgs__msg__JointTrajectoryPoint *)
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__waypoints(untyped_member, index));
-  trajectory_msgs__msg__JointTrajectoryPoint * value =
-    (trajectory_msgs__msg__JointTrajectoryPoint *)(untyped_value);
+  const double * item =
+    ((const double *)
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__qi(untyped_member, index));
+  double * value =
+    (double *)(untyped_value);
   *value = *item;
 }
 
-void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__waypoints(
+void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__qi(
   void * untyped_member, size_t index, const void * untyped_value)
 {
-  trajectory_msgs__msg__JointTrajectoryPoint * item =
-    ((trajectory_msgs__msg__JointTrajectoryPoint *)
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__waypoints(untyped_member, index));
-  const trajectory_msgs__msg__JointTrajectoryPoint * value =
-    (const trajectory_msgs__msg__JointTrajectoryPoint *)(untyped_value);
+  double * item =
+    ((double *)
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__qi(untyped_member, index));
+  const double * value =
+    (const double *)(untyped_value);
   *item = *value;
 }
 
-bool omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__waypoints(
+bool omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__qi(
   void * untyped_member, size_t size)
 {
-  trajectory_msgs__msg__JointTrajectoryPoint__Sequence * member =
-    (trajectory_msgs__msg__JointTrajectoryPoint__Sequence *)(untyped_member);
-  trajectory_msgs__msg__JointTrajectoryPoint__Sequence__fini(member);
-  return trajectory_msgs__msg__JointTrajectoryPoint__Sequence__init(member, size);
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
+  rosidl_runtime_c__double__Sequence__fini(member);
+  return rosidl_runtime_c__double__Sequence__init(member, size);
 }
 
-size_t omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__joint_names(
+size_t omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__qf(
   const void * untyped_member)
 {
-  const rosidl_runtime_c__String__Sequence * member =
-    (const rosidl_runtime_c__String__Sequence *)(untyped_member);
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
   return member->size;
 }
 
-const void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__joint_names(
+const void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__qf(
   const void * untyped_member, size_t index)
 {
-  const rosidl_runtime_c__String__Sequence * member =
-    (const rosidl_runtime_c__String__Sequence *)(untyped_member);
+  const rosidl_runtime_c__double__Sequence * member =
+    (const rosidl_runtime_c__double__Sequence *)(untyped_member);
   return &member->data[index];
 }
 
-void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__joint_names(
+void * omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__qf(
   void * untyped_member, size_t index)
 {
-  rosidl_runtime_c__String__Sequence * member =
-    (rosidl_runtime_c__String__Sequence *)(untyped_member);
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
   return &member->data[index];
 }
 
-void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__joint_names(
+void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__qf(
   const void * untyped_member, size_t index, void * untyped_value)
 {
-  const rosidl_runtime_c__String * item =
-    ((const rosidl_runtime_c__String *)
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__joint_names(untyped_member, index));
-  rosidl_runtime_c__String * value =
-    (rosidl_runtime_c__String *)(untyped_value);
+  const double * item =
+    ((const double *)
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__qf(untyped_member, index));
+  double * value =
+    (double *)(untyped_value);
   *value = *item;
 }
 
-void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__joint_names(
+void omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__qf(
   void * untyped_member, size_t index, const void * untyped_value)
 {
-  rosidl_runtime_c__String * item =
-    ((rosidl_runtime_c__String *)
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__joint_names(untyped_member, index));
-  const rosidl_runtime_c__String * value =
-    (const rosidl_runtime_c__String *)(untyped_value);
+  double * item =
+    ((double *)
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__qf(untyped_member, index));
+  const double * value =
+    (const double *)(untyped_value);
   *item = *value;
 }
 
-bool omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__joint_names(
+bool omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__qf(
   void * untyped_member, size_t size)
 {
-  rosidl_runtime_c__String__Sequence * member =
-    (rosidl_runtime_c__String__Sequence *)(untyped_member);
-  rosidl_runtime_c__String__Sequence__fini(member);
-  return rosidl_runtime_c__String__Sequence__init(member, size);
+  rosidl_runtime_c__double__Sequence * member =
+    (rosidl_runtime_c__double__Sequence *)(untyped_member);
+  rosidl_runtime_c__double__Sequence__fini(member);
+  return rosidl_runtime_c__double__Sequence__init(member, size);
 }
 
 static rosidl_typesupport_introspection_c__MessageMember omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__GenerateTrajectory_Request_message_member_array[3] = {
   {
-    "waypoints",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message (initialized later)
-    false,  // is key
-    true,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(omx_interfaces__srv__GenerateTrajectory_Request, waypoints),  // bytes offset in struct
-    NULL,  // default value
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__waypoints,  // size() function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__waypoints,  // get_const(index) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__waypoints,  // get(index) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__waypoints,  // fetch(index, &value) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__waypoints,  // assign(index, value) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__waypoints  // resize(index) function pointer
-  },
-  {
-    "joint_names",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    "qi",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is key
     true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(omx_interfaces__srv__GenerateTrajectory_Request, joint_names),  // bytes offset in struct
+    offsetof(omx_interfaces__srv__GenerateTrajectory_Request, qi),  // bytes offset in struct
     NULL,  // default value
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__joint_names,  // size() function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__joint_names,  // get_const(index) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__joint_names,  // get(index) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__joint_names,  // fetch(index, &value) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__joint_names,  // assign(index, value) function pointer
-    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__joint_names  // resize(index) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__qi,  // size() function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__qi,  // get_const(index) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__qi,  // get(index) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__qi,  // fetch(index, &value) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__qi,  // assign(index, value) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__qi  // resize(index) function pointer
   },
   {
-    "duration",  // name
+    "qf",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(omx_interfaces__srv__GenerateTrajectory_Request, qf),  // bytes offset in struct
+    NULL,  // default value
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__size_function__GenerateTrajectory_Request__qf,  // size() function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_const_function__GenerateTrajectory_Request__qf,  // get_const(index) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__get_function__GenerateTrajectory_Request__qf,  // get(index) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__fetch_function__GenerateTrajectory_Request__qf,  // fetch(index, &value) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__assign_function__GenerateTrajectory_Request__qf,  // assign(index, value) function pointer
+    omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__resize_function__GenerateTrajectory_Request__qf  // resize(index) function pointer
+  },
+  {
+    "ts",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
@@ -195,7 +192,7 @@ static rosidl_typesupport_introspection_c__MessageMember omx_interfaces__srv__Ge
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(omx_interfaces__srv__GenerateTrajectory_Request, duration),  // bytes offset in struct
+    offsetof(omx_interfaces__srv__GenerateTrajectory_Request, ts),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -231,8 +228,6 @@ static rosidl_message_type_support_t omx_interfaces__srv__GenerateTrajectory_Req
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_omx_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, omx_interfaces, srv, GenerateTrajectory_Request)() {
-  omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__GenerateTrajectory_Request_message_member_array[0].members_ =
-    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, trajectory_msgs, msg, JointTrajectoryPoint)();
   if (!omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__GenerateTrajectory_Request_message_type_support_handle.typesupport_identifier) {
     omx_interfaces__srv__GenerateTrajectory_Request__rosidl_typesupport_introspection_c__GenerateTrajectory_Request_message_type_support_handle.typesupport_identifier =
       rosidl_typesupport_introspection_c__identifier;
@@ -267,8 +262,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 // Member `trajectory`
 #include "trajectory_msgs/msg/detail/joint_trajectory__rosidl_typesupport_introspection_c.h"
 // Member `message`
-// already included above
-// #include "rosidl_runtime_c/string_functions.h"
+#include "rosidl_runtime_c/string_functions.h"
 
 #ifdef __cplusplus
 extern "C"

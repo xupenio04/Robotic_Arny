@@ -44,11 +44,11 @@ GRIPPER_CLOSE = 0.0
 # ============================================================================
 
 CONFIG_REST      = [0.0,  0.0,  0.0,  0.0,  0.0]
-CONFIG_ABOVE_OBJ = [0.4, -0.3,  0.3,  0.2,  0.0]
-CONFIG_GRASP     = [0.4, -0.5,  0.5,  0.3,  0.0]
-CONFIG_TRANSPORT = [0.0,  0.0,  0.0,  0.0,  0.0]
-CONFIG_ABOVE_DST = [-0.4, -0.3, 0.3,  0.2,  0.0]
-CONFIG_PLACE     = [-0.4, -0.5, 0.5,  0.3,  0.0]
+CONFIG_ABOVE_OBJ = [0.0, 0.0 ,  0.0,  0.0,  0.0]
+CONFIG_GRASP     = [0.0, 0.0,  0.0,  0.0,  0.0]
+CONFIG_TRANSPORT = [1.57,  1.57,  0.0,  0.0,  0.0]
+CONFIG_ABOVE_DST = [0.0, 0.0, 0.0,  0.0,  0.0]
+CONFIG_PLACE     = [0.0, 0.0, 0.0,  0.0,  0.0]
 
 
 # ============================================================================
@@ -128,7 +128,7 @@ class TaskSupervisorNode(Node):
     def _call_execute(self, traj_msg, ts=DEFAULT_TS):
         req = ExecuteTrajectory.Request()
         req.trajectory = traj_msg
-        req.ts = ts
+        # req.ts = ts
 
         future = self.exec_client.call_async(req)
         rclpy.spin_until_future_complete(self, future)

@@ -4,19 +4,9 @@
       "type_name": "omx_interfaces/srv/GenerateTrajectory_Request",
       "fields": [
         {
-          "name": "waypoints",
+          "name": "qi",
           "type": {
-            "type_id": 145,
-            "capacity": 0,
-            "string_capacity": 0,
-            "nested_type_name": "trajectory_msgs/msg/JointTrajectoryPoint"
-          },
-          "default_value": ""
-        },
-        {
-          "name": "joint_names",
-          "type": {
-            "type_id": 161,
+            "type_id": 155,
             "capacity": 0,
             "string_capacity": 0,
             "nested_type_name": ""
@@ -24,7 +14,17 @@
           "default_value": ""
         },
         {
-          "name": "duration",
+          "name": "qf",
+          "type": {
+            "type_id": 155,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "ts",
           "type": {
             "type_id": 11,
             "capacity": 0,
@@ -35,101 +35,12 @@
         }
       ]
     },
-    "referenced_type_descriptions": [
-      {
-        "type_name": "builtin_interfaces/msg/Duration",
-        "fields": [
-          {
-            "name": "sec",
-            "type": {
-              "type_id": 6,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": ""
-            },
-            "default_value": ""
-          },
-          {
-            "name": "nanosec",
-            "type": {
-              "type_id": 7,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": ""
-            },
-            "default_value": ""
-          }
-        ]
-      },
-      {
-        "type_name": "trajectory_msgs/msg/JointTrajectoryPoint",
-        "fields": [
-          {
-            "name": "positions",
-            "type": {
-              "type_id": 155,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": ""
-            },
-            "default_value": ""
-          },
-          {
-            "name": "velocities",
-            "type": {
-              "type_id": 155,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": ""
-            },
-            "default_value": ""
-          },
-          {
-            "name": "accelerations",
-            "type": {
-              "type_id": 155,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": ""
-            },
-            "default_value": ""
-          },
-          {
-            "name": "effort",
-            "type": {
-              "type_id": 155,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": ""
-            },
-            "default_value": ""
-          },
-          {
-            "name": "time_from_start",
-            "type": {
-              "type_id": 1,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": "builtin_interfaces/msg/Duration"
-            },
-            "default_value": ""
-          }
-        ]
-      }
-    ]
+    "referenced_type_descriptions": []
   },
   "type_hashes": [
     {
       "type_name": "omx_interfaces/srv/GenerateTrajectory_Request",
-      "hash_string": "RIHS01_26e47b7c8549376bdbd5fea479c2d80d64511b02faabea667a0c578c0f7a349e"
-    },
-    {
-      "type_name": "builtin_interfaces/msg/Duration",
-      "hash_string": "RIHS01_e8d009f659816f758b75334ee1a9ca5b5c0b859843261f14c7f937349599d93b"
-    },
-    {
-      "type_name": "trajectory_msgs/msg/JointTrajectoryPoint",
-      "hash_string": "RIHS01_de8907036d8bd45aac6f30cc9044a3d4a329c42cbf719aff7d95a584cfa532d7"
+      "hash_string": "RIHS01_1557346a5b67bcd6232c60a9ac03a151e64dbfb3ec74c9ba4f3e50ffafbf00d7"
     }
   ]
 }

@@ -16,17 +16,17 @@ pub struct GenerateTrajectory_Request {
 
     // This member is not documented.
     #[allow(missing_docs)]
-    pub waypoints: Vec<trajectory_msgs::msg::JointTrajectoryPoint>,
+    pub qi: Vec<f64>,
 
 
     // This member is not documented.
     #[allow(missing_docs)]
-    pub joint_names: Vec<std::string::String>,
+    pub qf: Vec<f64>,
 
 
     // This member is not documented.
     #[allow(missing_docs)]
-    pub duration: f64,
+    pub ts: f64,
 
 }
 
@@ -44,41 +44,27 @@ impl rosidl_runtime_rs::Message for GenerateTrajectory_Request {
   fn into_rmw_message(msg_cow: std::borrow::Cow<'_, Self>) -> std::borrow::Cow<'_, Self::RmwMsg> {
     match msg_cow {
       std::borrow::Cow::Owned(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
-        waypoints: msg.waypoints
-          .into_iter()
-          .map(|elem| trajectory_msgs::msg::JointTrajectoryPoint::into_rmw_message(std::borrow::Cow::Owned(elem)).into_owned())
-          .collect(),
-        joint_names: msg.joint_names
-          .into_iter()
-          .map(|elem| elem.as_str().into())
-          .collect(),
-        duration: msg.duration,
+        qi: msg.qi.into(),
+        qf: msg.qf.into(),
+        ts: msg.ts,
       }),
       std::borrow::Cow::Borrowed(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
-        waypoints: msg.waypoints
-          .iter()
-          .map(|elem| trajectory_msgs::msg::JointTrajectoryPoint::into_rmw_message(std::borrow::Cow::Borrowed(elem)).into_owned())
-          .collect(),
-        joint_names: msg.joint_names
-          .iter()
-          .map(|elem| elem.as_str().into())
-          .collect(),
-      duration: msg.duration,
+        qi: msg.qi.as_slice().into(),
+        qf: msg.qf.as_slice().into(),
+      ts: msg.ts,
       })
     }
   }
 
   fn from_rmw_message(msg: Self::RmwMsg) -> Self {
     Self {
-      waypoints: msg.waypoints
+      qi: msg.qi
           .into_iter()
-          .map(trajectory_msgs::msg::JointTrajectoryPoint::from_rmw_message)
           .collect(),
-      joint_names: msg.joint_names
+      qf: msg.qf
           .into_iter()
-          .map(|elem| elem.to_string())
           .collect(),
-      duration: msg.duration,
+      ts: msg.ts,
     }
   }
 }

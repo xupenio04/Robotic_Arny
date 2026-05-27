@@ -38,135 +38,135 @@ void GenerateTrajectory_Request_fini_function(void * message_memory)
   typed_message->~GenerateTrajectory_Request();
 }
 
-size_t size_function__GenerateTrajectory_Request__waypoints(const void * untyped_member)
+size_t size_function__GenerateTrajectory_Request__qi(const void * untyped_member)
 {
-  const auto * member = reinterpret_cast<const std::vector<trajectory_msgs::msg::JointTrajectoryPoint> *>(untyped_member);
+  const auto * member = reinterpret_cast<const std::vector<double> *>(untyped_member);
   return member->size();
 }
 
-const void * get_const_function__GenerateTrajectory_Request__waypoints(const void * untyped_member, size_t index)
+const void * get_const_function__GenerateTrajectory_Request__qi(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::vector<trajectory_msgs::msg::JointTrajectoryPoint> *>(untyped_member);
+    *reinterpret_cast<const std::vector<double> *>(untyped_member);
   return &member[index];
 }
 
-void * get_function__GenerateTrajectory_Request__waypoints(void * untyped_member, size_t index)
+void * get_function__GenerateTrajectory_Request__qi(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::vector<trajectory_msgs::msg::JointTrajectoryPoint> *>(untyped_member);
+    *reinterpret_cast<std::vector<double> *>(untyped_member);
   return &member[index];
 }
 
-void fetch_function__GenerateTrajectory_Request__waypoints(
+void fetch_function__GenerateTrajectory_Request__qi(
   const void * untyped_member, size_t index, void * untyped_value)
 {
-  const auto & item = *reinterpret_cast<const trajectory_msgs::msg::JointTrajectoryPoint *>(
-    get_const_function__GenerateTrajectory_Request__waypoints(untyped_member, index));
-  auto & value = *reinterpret_cast<trajectory_msgs::msg::JointTrajectoryPoint *>(untyped_value);
+  const auto & item = *reinterpret_cast<const double *>(
+    get_const_function__GenerateTrajectory_Request__qi(untyped_member, index));
+  auto & value = *reinterpret_cast<double *>(untyped_value);
   value = item;
 }
 
-void assign_function__GenerateTrajectory_Request__waypoints(
+void assign_function__GenerateTrajectory_Request__qi(
   void * untyped_member, size_t index, const void * untyped_value)
 {
-  auto & item = *reinterpret_cast<trajectory_msgs::msg::JointTrajectoryPoint *>(
-    get_function__GenerateTrajectory_Request__waypoints(untyped_member, index));
-  const auto & value = *reinterpret_cast<const trajectory_msgs::msg::JointTrajectoryPoint *>(untyped_value);
+  auto & item = *reinterpret_cast<double *>(
+    get_function__GenerateTrajectory_Request__qi(untyped_member, index));
+  const auto & value = *reinterpret_cast<const double *>(untyped_value);
   item = value;
 }
 
-void resize_function__GenerateTrajectory_Request__waypoints(void * untyped_member, size_t size)
+void resize_function__GenerateTrajectory_Request__qi(void * untyped_member, size_t size)
 {
   auto * member =
-    reinterpret_cast<std::vector<trajectory_msgs::msg::JointTrajectoryPoint> *>(untyped_member);
+    reinterpret_cast<std::vector<double> *>(untyped_member);
   member->resize(size);
 }
 
-size_t size_function__GenerateTrajectory_Request__joint_names(const void * untyped_member)
+size_t size_function__GenerateTrajectory_Request__qf(const void * untyped_member)
 {
-  const auto * member = reinterpret_cast<const std::vector<std::string> *>(untyped_member);
+  const auto * member = reinterpret_cast<const std::vector<double> *>(untyped_member);
   return member->size();
 }
 
-const void * get_const_function__GenerateTrajectory_Request__joint_names(const void * untyped_member, size_t index)
+const void * get_const_function__GenerateTrajectory_Request__qf(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::vector<std::string> *>(untyped_member);
+    *reinterpret_cast<const std::vector<double> *>(untyped_member);
   return &member[index];
 }
 
-void * get_function__GenerateTrajectory_Request__joint_names(void * untyped_member, size_t index)
+void * get_function__GenerateTrajectory_Request__qf(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::vector<std::string> *>(untyped_member);
+    *reinterpret_cast<std::vector<double> *>(untyped_member);
   return &member[index];
 }
 
-void fetch_function__GenerateTrajectory_Request__joint_names(
+void fetch_function__GenerateTrajectory_Request__qf(
   const void * untyped_member, size_t index, void * untyped_value)
 {
-  const auto & item = *reinterpret_cast<const std::string *>(
-    get_const_function__GenerateTrajectory_Request__joint_names(untyped_member, index));
-  auto & value = *reinterpret_cast<std::string *>(untyped_value);
+  const auto & item = *reinterpret_cast<const double *>(
+    get_const_function__GenerateTrajectory_Request__qf(untyped_member, index));
+  auto & value = *reinterpret_cast<double *>(untyped_value);
   value = item;
 }
 
-void assign_function__GenerateTrajectory_Request__joint_names(
+void assign_function__GenerateTrajectory_Request__qf(
   void * untyped_member, size_t index, const void * untyped_value)
 {
-  auto & item = *reinterpret_cast<std::string *>(
-    get_function__GenerateTrajectory_Request__joint_names(untyped_member, index));
-  const auto & value = *reinterpret_cast<const std::string *>(untyped_value);
+  auto & item = *reinterpret_cast<double *>(
+    get_function__GenerateTrajectory_Request__qf(untyped_member, index));
+  const auto & value = *reinterpret_cast<const double *>(untyped_value);
   item = value;
 }
 
-void resize_function__GenerateTrajectory_Request__joint_names(void * untyped_member, size_t size)
+void resize_function__GenerateTrajectory_Request__qf(void * untyped_member, size_t size)
 {
   auto * member =
-    reinterpret_cast<std::vector<std::string> *>(untyped_member);
+    reinterpret_cast<std::vector<double> *>(untyped_member);
   member->resize(size);
 }
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMember GenerateTrajectory_Request_message_member_array[3] = {
   {
-    "waypoints",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
-    0,  // upper bound of string
-    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<trajectory_msgs::msg::JointTrajectoryPoint>(),  // members of sub message
-    false,  // is key
-    true,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(omx_interfaces::srv::GenerateTrajectory_Request, waypoints),  // bytes offset in struct
-    nullptr,  // default value
-    size_function__GenerateTrajectory_Request__waypoints,  // size() function pointer
-    get_const_function__GenerateTrajectory_Request__waypoints,  // get_const(index) function pointer
-    get_function__GenerateTrajectory_Request__waypoints,  // get(index) function pointer
-    fetch_function__GenerateTrajectory_Request__waypoints,  // fetch(index, &value) function pointer
-    assign_function__GenerateTrajectory_Request__waypoints,  // assign(index, value) function pointer
-    resize_function__GenerateTrajectory_Request__waypoints  // resize(index) function pointer
-  },
-  {
-    "joint_names",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
+    "qi",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is key
     true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(omx_interfaces::srv::GenerateTrajectory_Request, joint_names),  // bytes offset in struct
+    offsetof(omx_interfaces::srv::GenerateTrajectory_Request, qi),  // bytes offset in struct
     nullptr,  // default value
-    size_function__GenerateTrajectory_Request__joint_names,  // size() function pointer
-    get_const_function__GenerateTrajectory_Request__joint_names,  // get_const(index) function pointer
-    get_function__GenerateTrajectory_Request__joint_names,  // get(index) function pointer
-    fetch_function__GenerateTrajectory_Request__joint_names,  // fetch(index, &value) function pointer
-    assign_function__GenerateTrajectory_Request__joint_names,  // assign(index, value) function pointer
-    resize_function__GenerateTrajectory_Request__joint_names  // resize(index) function pointer
+    size_function__GenerateTrajectory_Request__qi,  // size() function pointer
+    get_const_function__GenerateTrajectory_Request__qi,  // get_const(index) function pointer
+    get_function__GenerateTrajectory_Request__qi,  // get(index) function pointer
+    fetch_function__GenerateTrajectory_Request__qi,  // fetch(index, &value) function pointer
+    assign_function__GenerateTrajectory_Request__qi,  // assign(index, value) function pointer
+    resize_function__GenerateTrajectory_Request__qi  // resize(index) function pointer
   },
   {
-    "duration",  // name
+    "qf",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(omx_interfaces::srv::GenerateTrajectory_Request, qf),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__GenerateTrajectory_Request__qf,  // size() function pointer
+    get_const_function__GenerateTrajectory_Request__qf,  // get_const(index) function pointer
+    get_function__GenerateTrajectory_Request__qf,  // get(index) function pointer
+    fetch_function__GenerateTrajectory_Request__qf,  // fetch(index, &value) function pointer
+    assign_function__GenerateTrajectory_Request__qf,  // assign(index, value) function pointer
+    resize_function__GenerateTrajectory_Request__qf  // resize(index) function pointer
+  },
+  {
+    "ts",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
@@ -174,7 +174,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember GenerateTraje
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(omx_interfaces::srv::GenerateTrajectory_Request, duration),  // bytes offset in struct
+    offsetof(omx_interfaces::srv::GenerateTrajectory_Request, ts),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer

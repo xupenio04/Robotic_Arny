@@ -30,17 +30,17 @@ pub struct GenerateTrajectory_Request {
 
     // This member is not documented.
     #[allow(missing_docs)]
-    pub waypoints: rosidl_runtime_rs::Sequence<trajectory_msgs::msg::rmw::JointTrajectoryPoint>,
+    pub qi: rosidl_runtime_rs::Sequence<f64>,
 
 
     // This member is not documented.
     #[allow(missing_docs)]
-    pub joint_names: rosidl_runtime_rs::Sequence<rosidl_runtime_rs::String>,
+    pub qf: rosidl_runtime_rs::Sequence<f64>,
 
 
     // This member is not documented.
     #[allow(missing_docs)]
-    pub duration: f64,
+    pub ts: f64,
 
 }
 

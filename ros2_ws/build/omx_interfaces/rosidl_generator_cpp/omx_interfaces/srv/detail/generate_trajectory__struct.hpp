@@ -19,10 +19,6 @@
 #include "rosidl_runtime_cpp/message_initialization.hpp"
 
 
-// Include directives for member types
-// Member 'waypoints'
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__struct.hpp"
-
 #ifndef _WIN32
 # define DEPRECATED__omx_interfaces__srv__GenerateTrajectory_Request __attribute__((deprecated))
 #else
@@ -46,7 +42,7 @@ struct GenerateTrajectory_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->duration = 0.0;
+      this->ts = 0.0;
     }
   }
 
@@ -56,38 +52,38 @@ struct GenerateTrajectory_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->duration = 0.0;
+      this->ts = 0.0;
     }
   }
 
   // field types and members
-  using _waypoints_type =
-    std::vector<trajectory_msgs::msg::JointTrajectoryPoint_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<trajectory_msgs::msg::JointTrajectoryPoint_<ContainerAllocator>>>;
-  _waypoints_type waypoints;
-  using _joint_names_type =
-    std::vector<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>>;
-  _joint_names_type joint_names;
-  using _duration_type =
+  using _qi_type =
+    std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
+  _qi_type qi;
+  using _qf_type =
+    std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
+  _qf_type qf;
+  using _ts_type =
     double;
-  _duration_type duration;
+  _ts_type ts;
 
   // setters for named parameter idiom
-  Type & set__waypoints(
-    const std::vector<trajectory_msgs::msg::JointTrajectoryPoint_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<trajectory_msgs::msg::JointTrajectoryPoint_<ContainerAllocator>>> & _arg)
+  Type & set__qi(
+    const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
   {
-    this->waypoints = _arg;
+    this->qi = _arg;
     return *this;
   }
-  Type & set__joint_names(
-    const std::vector<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>> & _arg)
+  Type & set__qf(
+    const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
   {
-    this->joint_names = _arg;
+    this->qf = _arg;
     return *this;
   }
-  Type & set__duration(
+  Type & set__ts(
     const double & _arg)
   {
-    this->duration = _arg;
+    this->ts = _arg;
     return *this;
   }
 
@@ -133,13 +129,13 @@ struct GenerateTrajectory_Request_
   // comparison operators
   bool operator==(const GenerateTrajectory_Request_ & other) const
   {
-    if (this->waypoints != other.waypoints) {
+    if (this->qi != other.qi) {
       return false;
     }
-    if (this->joint_names != other.joint_names) {
+    if (this->qf != other.qf) {
       return false;
     }
-    if (this->duration != other.duration) {
+    if (this->ts != other.ts) {
       return false;
     }
     return true;

@@ -2,28 +2,14 @@ from dynamixel_easy_sdk import *
 import time
 import math
 
-# ============================================================================
-# CONFIGURAÇÃO DOS MOTORES
-# ============================================================================
-#
-# D       -> direção cinemática (+1 ou -1)
-# S       -> resolução do encoder
-# offset  -> zero mecânico do motor
-# raw_min/max -> limites de segurança
-#
-# IMPORTANTE:
-# Mantivemos raw_min < raw_max para evitar ambiguidades.
-# A direção já é tratada por D.
-#
-# ============================================================================
 
 MOTOR_CONFIG = [
     {"id": 11, "D":  1, "S": 4096, "offset":  2048, "raw_min": 1024, "raw_max": 3200},
-    {"id": 12, "D": -1, "S": 4096, "offset":  3072, "raw_min": 750, "raw_max": 3270 },
+    {"id": 12, "D": -1, "S": 4096, "offset":  3072, "raw_min": 750, "raw_max": 3400 },
     {"id": 13, "D": -1, "S": 4096, "offset":  1024, "raw_min": 730, "raw_max": 3200},
     {"id": 14, "D": -1, "S": 4096, "offset":  2048, "raw_min": 700, "raw_max": 3300},
     {"id": 15, "D":  1, "S": 4096, "offset":  2048, "raw_min":    0, "raw_max": 4096},
-    {"id": 16, "D":  1, "S": 4096, "offset": 2048, "raw_min": 2048, "raw_max": 3200},
+    {"id": 16, "D":  1, "S": 4096, "offset": 2048, "raw_min": 1920, "raw_max": 3200},
 ]
 
 PORT = "/dev/ttyACM0"
@@ -243,50 +229,43 @@ class OmxDriver:
     # =========================================================================
     # EXECUÇÃO DE TRAJETÓRIA MULTI-JUNTA
     # =========================================================================
-
+    
     def execute_trajectory(
         self,
         traj: list[list[float]],
-        ts: float
+        time_from_start: list[float]  # lista de tempos em segundos
     ) -> None:
+        arm_motors = self._motors[:-1]
+        n_arm = len(arm_motors)
 
-       
-        next_time = time.perf_counter()
+        start_time = time.perf_counter()
 
         for step_idx, points in enumerate(traj):
-
             # ----------------------------------------------------------------
             # Validação de tamanho
             # ----------------------------------------------------------------
-
-            if len(points) != len(self._motors):
+            if len(points) != n_arm:
                 raise ValueError(
                     f"Trajectory point size ({len(points)}) "
-                    f"!= number of motors ({len(self._motors)})."
+                    f"!= number of arm motors ({n_arm})."
                 )
-            
-            print(len(points))
 
             # ----------------------------------------------------------------
             # Stage dos comandos
             # ----------------------------------------------------------------
-
-            for i, motor in enumerate(self._motors):
-
+            for i, motor in enumerate(arm_motors):
                 raw_cmd = joint_to_raw(
                     points[i],
                     self._motor_config[i]["D"],
                     self._motor_config[i]["S"],
                     self._motor_config[i]["offset"],
                 )
-
                 raw_cmd = clamp_raw(
                     raw_cmd,
                     self._motor_config[i]["raw_min"],
                     self._motor_config[i]["raw_max"],
                     motor_id=self._motor_config[i]["id"],
                 )
-
                 self._group_executor.addCmd(
                     motor.stageSetGoalPosition(raw_cmd)
                 )
@@ -294,35 +273,23 @@ class OmxDriver:
             # ----------------------------------------------------------------
             # Sync write
             # ----------------------------------------------------------------
-
             self._group_executor.executeWrite()
-
-            print(self._group_executor.executeWrite())
-
             self._group_executor.clearStagedWriteCommands()
 
             # ----------------------------------------------------------------
-            # Controle temporal absoluto
+            # Controle temporal absoluto baseado no time_from_start
             # ----------------------------------------------------------------
-
-            next_time += ts
-
-            remaining = next_time - time.perf_counter()
-
-            # ----------------------------------------------------------------
-            # Pequenos overruns são normais
-            # ----------------------------------------------------------------
+            target_time = start_time + time_from_start[step_idx]
+            remaining = target_time - time.perf_counter()
 
             if remaining > 0:
                 time.sleep(remaining)
-
             elif remaining < -0.005:
                 print(
                     f"[OmxDriver] WARNING: "
                     f"step {step_idx} overran by "
                     f"{-remaining * 1e3:.2f} ms."
                 )
-
     # =========================================================================
     # EXECUÇÃO DE UMA ÚNICA JUNTA
     # =========================================================================

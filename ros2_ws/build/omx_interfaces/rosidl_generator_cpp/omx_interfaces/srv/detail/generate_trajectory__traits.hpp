@@ -17,10 +17,6 @@
 #include "omx_interfaces/srv/detail/generate_trajectory__struct.hpp"
 #include "rosidl_runtime_cpp/traits.hpp"
 
-// Include directives for member types
-// Member 'waypoints'
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__traits.hpp"
-
 namespace omx_interfaces
 {
 
@@ -32,32 +28,14 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: waypoints
+  // member: qi
   {
-    if (msg.waypoints.size() == 0) {
-      out << "waypoints: []";
+    if (msg.qi.size() == 0) {
+      out << "qi: []";
     } else {
-      out << "waypoints: [";
-      size_t pending_items = msg.waypoints.size();
-      for (auto item : msg.waypoints) {
-        to_flow_style_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: joint_names
-  {
-    if (msg.joint_names.size() == 0) {
-      out << "joint_names: []";
-    } else {
-      out << "joint_names: [";
-      size_t pending_items = msg.joint_names.size();
-      for (auto item : msg.joint_names) {
+      out << "qi: [";
+      size_t pending_items = msg.qi.size();
+      for (auto item : msg.qi) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -68,10 +46,28 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: duration
+  // member: qf
   {
-    out << "duration: ";
-    rosidl_generator_traits::value_to_yaml(msg.duration, out);
+    if (msg.qf.size() == 0) {
+      out << "qf: []";
+    } else {
+      out << "qf: [";
+      size_t pending_items = msg.qf.size();
+      for (auto item : msg.qf) {
+        rosidl_generator_traits::value_to_yaml(item, out);
+        if (--pending_items > 0) {
+          out << ", ";
+        }
+      }
+      out << "]";
+    }
+    out << ", ";
+  }
+
+  // member: ts
+  {
+    out << "ts: ";
+    rosidl_generator_traits::value_to_yaml(msg.ts, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -80,35 +76,16 @@ inline void to_block_style_yaml(
   const GenerateTrajectory_Request & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: waypoints
+  // member: qi
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.waypoints.size() == 0) {
-      out << "waypoints: []\n";
+    if (msg.qi.size() == 0) {
+      out << "qi: []\n";
     } else {
-      out << "waypoints:\n";
-      for (auto item : msg.waypoints) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "-\n";
-        to_block_style_yaml(item, out, indentation + 2);
-      }
-    }
-  }
-
-  // member: joint_names
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.joint_names.size() == 0) {
-      out << "joint_names: []\n";
-    } else {
-      out << "joint_names:\n";
-      for (auto item : msg.joint_names) {
+      out << "qi:\n";
+      for (auto item : msg.qi) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -119,13 +96,33 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: duration
+  // member: qf
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "duration: ";
-    rosidl_generator_traits::value_to_yaml(msg.duration, out);
+    if (msg.qf.size() == 0) {
+      out << "qf: []\n";
+    } else {
+      out << "qf:\n";
+      for (auto item : msg.qf) {
+        if (indentation > 0) {
+          out << std::string(indentation, ' ');
+        }
+        out << "- ";
+        rosidl_generator_traits::value_to_yaml(item, out);
+        out << "\n";
+      }
+    }
+  }
+
+  // member: ts
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "ts: ";
+    rosidl_generator_traits::value_to_yaml(msg.ts, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

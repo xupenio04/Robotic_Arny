@@ -11,10 +11,10 @@ omx_interfaces__srv__GenerateTrajectory__get_type_hash(
 {
   (void)type_support;
   static rosidl_type_hash_t hash = {1, {
-      0x05, 0xbc, 0x1a, 0x40, 0xda, 0xfe, 0x6c, 0x82,
-      0xa8, 0xb6, 0x5c, 0x5f, 0x33, 0x71, 0xcc, 0x45,
-      0xf2, 0x2f, 0x00, 0x4b, 0x76, 0x33, 0x2f, 0xbe,
-      0xec, 0x49, 0xe9, 0xb6, 0x31, 0x17, 0x4d, 0xfc,
+      0xad, 0x4b, 0x50, 0x9b, 0x73, 0x95, 0x1b, 0x25,
+      0x67, 0x38, 0xd9, 0xa2, 0xa5, 0x62, 0x4b, 0x7b,
+      0x37, 0x43, 0x00, 0x16, 0xe2, 0x4e, 0x48, 0x39,
+      0x8b, 0x1c, 0x5b, 0x09, 0x8f, 0x63, 0xab, 0xc0,
     }};
   return &hash;
 }
@@ -26,10 +26,10 @@ omx_interfaces__srv__GenerateTrajectory_Request__get_type_hash(
 {
   (void)type_support;
   static rosidl_type_hash_t hash = {1, {
-      0x26, 0xe4, 0x7b, 0x7c, 0x85, 0x49, 0x37, 0x6b,
-      0xdb, 0xd5, 0xfe, 0xa4, 0x79, 0xc2, 0xd8, 0x0d,
-      0x64, 0x51, 0x1b, 0x02, 0xfa, 0xab, 0xea, 0x66,
-      0x7a, 0x0c, 0x57, 0x8c, 0x0f, 0x7a, 0x34, 0x9e,
+      0x15, 0x57, 0x34, 0x6a, 0x5b, 0x67, 0xbc, 0xd6,
+      0x23, 0x2c, 0x60, 0xa9, 0xac, 0x03, 0xa1, 0x51,
+      0xe6, 0x4d, 0xbf, 0xb3, 0xec, 0x74, 0xc9, 0xba,
+      0x4f, 0x3e, 0x50, 0xff, 0xaf, 0xbf, 0x00, 0xd7,
     }};
   return &hash;
 }
@@ -56,10 +56,10 @@ omx_interfaces__srv__GenerateTrajectory_Event__get_type_hash(
 {
   (void)type_support;
   static rosidl_type_hash_t hash = {1, {
-      0x81, 0x4b, 0xf8, 0xe9, 0x59, 0x7c, 0x1e, 0x89,
-      0x49, 0x15, 0x3c, 0x83, 0x10, 0xce, 0x31, 0xdd,
-      0x19, 0xee, 0xd0, 0x3b, 0x9c, 0x28, 0x93, 0x7e,
-      0x68, 0x75, 0x29, 0x15, 0xbc, 0xed, 0xf0, 0x0d,
+      0x99, 0x83, 0x22, 0x9a, 0xf5, 0xf4, 0x15, 0x08,
+      0xb1, 0xd7, 0x58, 0xe5, 0x59, 0xfa, 0xbc, 0xad,
+      0x93, 0x00, 0x24, 0xf7, 0xdd, 0xc4, 0x47, 0xb6,
+      0x28, 0xcb, 0x5f, 0xb9, 0x5e, 0x6f, 0x2e, 0xed,
     }};
   return &hash;
 }
@@ -68,12 +68,12 @@ omx_interfaces__srv__GenerateTrajectory_Event__get_type_hash(
 #include <string.h>
 
 // Include directives for referenced types
-#include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"
 #include "std_msgs/msg/detail/header__functions.h"
+#include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"
 #include "builtin_interfaces/msg/detail/time__functions.h"
 #include "service_msgs/msg/detail/service_event_info__functions.h"
 #include "builtin_interfaces/msg/detail/duration__functions.h"
+#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"
 
 // Hashes for external referenced types
 #ifndef NDEBUG
@@ -237,25 +237,15 @@ omx_interfaces__srv__GenerateTrajectory__get_type_description(
   return &description;
 }
 // Define type names, field names, and default values
-static char omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__waypoints[] = "waypoints";
-static char omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__joint_names[] = "joint_names";
-static char omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__duration[] = "duration";
+static char omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__qi[] = "qi";
+static char omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__qf[] = "qf";
+static char omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__ts[] = "ts";
 
 static rosidl_runtime_c__type_description__Field omx_interfaces__srv__GenerateTrajectory_Request__FIELDS[] = {
   {
-    {omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__waypoints, 9, 9},
+    {omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__qi, 2, 2},
     {
-      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_NESTED_TYPE_UNBOUNDED_SEQUENCE,
-      0,
-      0,
-      {trajectory_msgs__msg__JointTrajectoryPoint__TYPE_NAME, 40, 40},
-    },
-    {NULL, 0, 0},
-  },
-  {
-    {omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__joint_names, 11, 11},
-    {
-      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_STRING_UNBOUNDED_SEQUENCE,
+      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_DOUBLE_UNBOUNDED_SEQUENCE,
       0,
       0,
       {NULL, 0, 0},
@@ -263,24 +253,23 @@ static rosidl_runtime_c__type_description__Field omx_interfaces__srv__GenerateTr
     {NULL, 0, 0},
   },
   {
-    {omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__duration, 8, 8},
+    {omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__qf, 2, 2},
+    {
+      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_DOUBLE_UNBOUNDED_SEQUENCE,
+      0,
+      0,
+      {NULL, 0, 0},
+    },
+    {NULL, 0, 0},
+  },
+  {
+    {omx_interfaces__srv__GenerateTrajectory_Request__FIELD_NAME__ts, 2, 2},
     {
       rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_DOUBLE,
       0,
       0,
       {NULL, 0, 0},
     },
-    {NULL, 0, 0},
-  },
-};
-
-static rosidl_runtime_c__type_description__IndividualTypeDescription omx_interfaces__srv__GenerateTrajectory_Request__REFERENCED_TYPE_DESCRIPTIONS[] = {
-  {
-    {builtin_interfaces__msg__Duration__TYPE_NAME, 31, 31},
-    {NULL, 0, 0},
-  },
-  {
-    {trajectory_msgs__msg__JointTrajectoryPoint__TYPE_NAME, 40, 40},
     {NULL, 0, 0},
   },
 };
@@ -296,13 +285,9 @@ omx_interfaces__srv__GenerateTrajectory_Request__get_type_description(
       {omx_interfaces__srv__GenerateTrajectory_Request__TYPE_NAME, 45, 45},
       {omx_interfaces__srv__GenerateTrajectory_Request__FIELDS, 3, 3},
     },
-    {omx_interfaces__srv__GenerateTrajectory_Request__REFERENCED_TYPE_DESCRIPTIONS, 2, 2},
+    {NULL, 0, 0},
   };
   if (!constructed) {
-    assert(0 == memcmp(&builtin_interfaces__msg__Duration__EXPECTED_HASH, builtin_interfaces__msg__Duration__get_type_hash(NULL), sizeof(rosidl_type_hash_t)));
-    description.referenced_type_descriptions.data[0].fields = builtin_interfaces__msg__Duration__get_type_description(NULL)->type_description.fields;
-    assert(0 == memcmp(&trajectory_msgs__msg__JointTrajectoryPoint__EXPECTED_HASH, trajectory_msgs__msg__JointTrajectoryPoint__get_type_hash(NULL), sizeof(rosidl_type_hash_t)));
-    description.referenced_type_descriptions.data[1].fields = trajectory_msgs__msg__JointTrajectoryPoint__get_type_description(NULL)->type_description.fields;
     constructed = true;
   }
   return &description;
@@ -503,9 +488,10 @@ omx_interfaces__srv__GenerateTrajectory_Event__get_type_description(
 }
 
 static char toplevel_type_raw_source[] =
-  "trajectory_msgs/JointTrajectoryPoint[] waypoints\n"
-  "string[] joint_names\n"
-  "float64 duration\n"
+  "# Request\n"
+  "float64[] qi\n"
+  "float64[] qf\n"
+  "float64 ts\n"
   "---\n"
   "# Response\n"
   "trajectory_msgs/JointTrajectory trajectory\n"
@@ -525,7 +511,7 @@ omx_interfaces__srv__GenerateTrajectory__get_individual_type_description_source(
   static const rosidl_runtime_c__type_description__TypeSource source = {
     {omx_interfaces__srv__GenerateTrajectory__TYPE_NAME, 37, 37},
     {srv_encoding, 3, 3},
-    {toplevel_type_raw_source, 172, 172},
+    {toplevel_type_raw_source, 132, 132},
   };
   return &source;
 }
@@ -598,13 +584,11 @@ omx_interfaces__srv__GenerateTrajectory_Request__get_type_description_sources(
   const rosidl_message_type_support_t * type_support)
 {
   (void)type_support;
-  static rosidl_runtime_c__type_description__TypeSource sources[3];
-  static const rosidl_runtime_c__type_description__TypeSource__Sequence source_sequence = {sources, 3, 3};
+  static rosidl_runtime_c__type_description__TypeSource sources[1];
+  static const rosidl_runtime_c__type_description__TypeSource__Sequence source_sequence = {sources, 1, 1};
   static bool constructed = false;
   if (!constructed) {
     sources[0] = *omx_interfaces__srv__GenerateTrajectory_Request__get_individual_type_description_source(NULL),
-    sources[1] = *builtin_interfaces__msg__Duration__get_individual_type_description_source(NULL);
-    sources[2] = *trajectory_msgs__msg__JointTrajectoryPoint__get_individual_type_description_source(NULL);
     constructed = true;
   }
   return &source_sequence;

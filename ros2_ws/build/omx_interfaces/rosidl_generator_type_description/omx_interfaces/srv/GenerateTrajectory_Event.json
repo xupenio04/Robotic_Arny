@@ -90,19 +90,9 @@
         "type_name": "omx_interfaces/srv/GenerateTrajectory_Request",
         "fields": [
           {
-            "name": "waypoints",
+            "name": "qi",
             "type": {
-              "type_id": 145,
-              "capacity": 0,
-              "string_capacity": 0,
-              "nested_type_name": "trajectory_msgs/msg/JointTrajectoryPoint"
-            },
-            "default_value": ""
-          },
-          {
-            "name": "joint_names",
-            "type": {
-              "type_id": 161,
+              "type_id": 155,
               "capacity": 0,
               "string_capacity": 0,
               "nested_type_name": ""
@@ -110,7 +100,17 @@
             "default_value": ""
           },
           {
-            "name": "duration",
+            "name": "qf",
+            "type": {
+              "type_id": 155,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "ts",
             "type": {
               "type_id": 11,
               "capacity": 0,
@@ -321,7 +321,7 @@
   "type_hashes": [
     {
       "type_name": "omx_interfaces/srv/GenerateTrajectory_Event",
-      "hash_string": "RIHS01_814bf8e9597c1e8949153c8310ce31dd19eed03b9c28937e68752915bcedf00d"
+      "hash_string": "RIHS01_9983229af5f41508b1d758e559fabcad930024f7ddc447b628cb5fb95e6f2eed"
     },
     {
       "type_name": "builtin_interfaces/msg/Duration",
@@ -333,7 +333,7 @@
     },
     {
       "type_name": "omx_interfaces/srv/GenerateTrajectory_Request",
-      "hash_string": "RIHS01_26e47b7c8549376bdbd5fea479c2d80d64511b02faabea667a0c578c0f7a349e"
+      "hash_string": "RIHS01_1557346a5b67bcd6232c60a9ac03a151e64dbfb3ec74c9ba4f3e50ffafbf00d7"
     },
     {
       "type_name": "omx_interfaces/srv/GenerateTrajectory_Response",

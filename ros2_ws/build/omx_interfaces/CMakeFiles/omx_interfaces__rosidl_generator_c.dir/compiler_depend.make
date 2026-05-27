@@ -381,6 +381,7 @@ CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfa
   /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
   /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
   /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
   /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
   /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
   /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
@@ -398,7 +399,6 @@ CMakeFiles/omx_interfaces__rosidl_generator_c.dir/rosidl_generator_c/omx_interfa
   /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__struct.h \
   /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__functions.h \
   /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__struct.h \
-  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__functions.h \
   /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.h \
   /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/rosidl_generator_c__visibility_control.h \
   /usr/include/alloca.h \
@@ -868,6 +868,8 @@ rosidl_generator_c/omx_interfaces/srv/detail/generate_trajectory__type_support.c
 /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/individual_type_description__struct.h:
 
 /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__struct.h:
+
+/opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 

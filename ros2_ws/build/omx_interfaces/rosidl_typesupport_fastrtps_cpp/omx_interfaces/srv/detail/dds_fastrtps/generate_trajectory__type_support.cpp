@@ -19,41 +19,6 @@
 
 
 // forward declaration of message dependencies and their conversion functions
-namespace trajectory_msgs
-{
-namespace msg
-{
-namespace typesupport_fastrtps_cpp
-{
-bool cdr_serialize(
-  const trajectory_msgs::msg::JointTrajectoryPoint &,
-  eprosima::fastcdr::Cdr &);
-bool cdr_deserialize(
-  eprosima::fastcdr::Cdr &,
-  trajectory_msgs::msg::JointTrajectoryPoint &);
-size_t get_serialized_size(
-  const trajectory_msgs::msg::JointTrajectoryPoint &,
-  size_t current_alignment);
-size_t
-max_serialized_size_JointTrajectoryPoint(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-bool cdr_serialize_key(
-  const trajectory_msgs::msg::JointTrajectoryPoint &,
-  eprosima::fastcdr::Cdr &);
-size_t get_serialized_size_key(
-  const trajectory_msgs::msg::JointTrajectoryPoint &,
-  size_t current_alignment);
-size_t
-max_serialized_size_key_JointTrajectoryPoint(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-}  // namespace typesupport_fastrtps_cpp
-}  // namespace msg
-}  // namespace trajectory_msgs
-
 
 namespace omx_interfaces
 {
@@ -71,24 +36,18 @@ cdr_serialize(
   const omx_interfaces::srv::GenerateTrajectory_Request & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: waypoints
+  // Member: qi
   {
-    size_t size = ros_message.waypoints.size();
-    cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; i++) {
-      trajectory_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
-        ros_message.waypoints[i],
-        cdr);
-    }
+    cdr << ros_message.qi;
   }
 
-  // Member: joint_names
+  // Member: qf
   {
-    cdr << ros_message.joint_names;
+    cdr << ros_message.qf;
   }
 
-  // Member: duration
-  cdr << ros_message.duration;
+  // Member: ts
+  cdr << ros_message.ts;
 
   return true;
 }
@@ -99,35 +58,18 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   omx_interfaces::srv::GenerateTrajectory_Request & ros_message)
 {
-  // Member: waypoints
+  // Member: qi
   {
-    uint32_t cdrSize;
-    cdr >> cdrSize;
-    size_t size = static_cast<size_t>(cdrSize);
-
-    // Check there are at least 'size' remaining bytes in the CDR stream before resizing
-    auto old_state = cdr.get_state();
-    bool correct_size = cdr.jump(size);
-    cdr.set_state(old_state);
-    if (!correct_size) {
-      fprintf(stderr, "sequence size exceeds remaining buffer\n");
-      return false;
-    }
-
-    ros_message.waypoints.resize(size);
-    for (size_t i = 0; i < size; i++) {
-      trajectory_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
-        cdr, ros_message.waypoints[i]);
-    }
+    cdr >> ros_message.qi;
   }
 
-  // Member: joint_names
+  // Member: qf
   {
-    cdr >> ros_message.joint_names;
+    cdr >> ros_message.qf;
   }
 
-  // Member: duration
-  cdr >> ros_message.duration;
+  // Member: ts
+  cdr >> ros_message.ts;
 
   return true;
 }  // NOLINT(readability/fn_size)
@@ -146,33 +88,29 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: waypoints
+  // Member: qi
   {
-    size_t array_size = ros_message.waypoints.size();
+    size_t array_size = ros_message.qi.size();
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment +=
-        trajectory_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
-        ros_message.waypoints[index], current_alignment);
-    }
+    size_t item_size = sizeof(ros_message.qi[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Member: joint_names
+  // Member: qf
   {
-    size_t array_size = ros_message.joint_names.size();
+    size_t array_size = ros_message.qf.size();
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        (ros_message.joint_names[index].size() + 1);
-    }
+    size_t item_size = sizeof(ros_message.qf[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Member: duration
+  // Member: ts
   {
-    size_t item_size = sizeof(ros_message.duration);
+    size_t item_size = sizeof(ros_message.ts);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -200,42 +138,29 @@ max_serialized_size_GenerateTrajectory_Request(
   full_bounded = true;
   is_plain = true;
 
-  // Member: waypoints
+  // Member: qi
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    last_member_size = 0;
-    for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size =
-        trajectory_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_JointTrajectoryPoint(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // Member: joint_names
+  // Member: qf
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // Member: duration
+  // Member: ts
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint64_t);
@@ -251,7 +176,7 @@ max_serialized_size_GenerateTrajectory_Request(
     using DataType = omx_interfaces::srv::GenerateTrajectory_Request;
     is_plain =
       (
-      offsetof(DataType, duration) +
+      offsetof(DataType, ts) +
       last_member_size
       ) == ret_val;
   }
@@ -265,24 +190,18 @@ cdr_serialize_key(
   const omx_interfaces::srv::GenerateTrajectory_Request & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: waypoints
+  // Member: qi
   {
-    size_t size = ros_message.waypoints.size();
-    cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; i++) {
-      trajectory_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize_key(
-        ros_message.waypoints[i],
-        cdr);
-    }
+    cdr << ros_message.qi;
   }
 
-  // Member: joint_names
+  // Member: qf
   {
-    cdr << ros_message.joint_names;
+    cdr << ros_message.qf;
   }
 
-  // Member: duration
-  cdr << ros_message.duration;
+  // Member: ts
+  cdr << ros_message.ts;
 
   return true;
 }
@@ -300,33 +219,29 @@ get_serialized_size_key(
   (void)padding;
   (void)wchar_size;
 
-  // Member: waypoints
+  // Member: qi
   {
-    size_t array_size = ros_message.waypoints.size();
+    size_t array_size = ros_message.qi.size();
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment +=
-        trajectory_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size_key(
-        ros_message.waypoints[index], current_alignment);
-    }
+    size_t item_size = sizeof(ros_message.qi[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Member: joint_names
+  // Member: qf
   {
-    size_t array_size = ros_message.joint_names.size();
+    size_t array_size = ros_message.qf.size();
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        (ros_message.joint_names[index].size() + 1);
-    }
+    size_t item_size = sizeof(ros_message.qf[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Member: duration
+  // Member: ts
   {
-    size_t item_size = sizeof(ros_message.duration);
+    size_t item_size = sizeof(ros_message.ts);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -353,44 +268,31 @@ max_serialized_size_key_GenerateTrajectory_Request(
   full_bounded = true;
   is_plain = true;
 
-  // Member: waypoints
+  // Member: qi
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    last_member_size = 0;
-    for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size =
-        trajectory_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_key_JointTrajectoryPoint(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Member: joint_names
+  // Member: qf
   {
     size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Member: duration
+  // Member: ts
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint64_t);
@@ -406,7 +308,7 @@ max_serialized_size_key_GenerateTrajectory_Request(
     using DataType = omx_interfaces::srv::GenerateTrajectory_Request;
     is_plain =
       (
-      offsetof(DataType, duration) +
+      offsetof(DataType, ts) +
       last_member_size
       ) == ret_val;
   }

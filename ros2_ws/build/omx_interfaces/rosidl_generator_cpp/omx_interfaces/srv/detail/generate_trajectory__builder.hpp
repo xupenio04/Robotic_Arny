@@ -24,15 +24,15 @@ namespace srv
 namespace builder
 {
 
-class Init_GenerateTrajectory_Request_duration
+class Init_GenerateTrajectory_Request_ts
 {
 public:
-  explicit Init_GenerateTrajectory_Request_duration(::omx_interfaces::srv::GenerateTrajectory_Request & msg)
+  explicit Init_GenerateTrajectory_Request_ts(::omx_interfaces::srv::GenerateTrajectory_Request & msg)
   : msg_(msg)
   {}
-  ::omx_interfaces::srv::GenerateTrajectory_Request duration(::omx_interfaces::srv::GenerateTrajectory_Request::_duration_type arg)
+  ::omx_interfaces::srv::GenerateTrajectory_Request ts(::omx_interfaces::srv::GenerateTrajectory_Request::_ts_type arg)
   {
-    msg_.duration = std::move(arg);
+    msg_.ts = std::move(arg);
     return std::move(msg_);
   }
 
@@ -40,32 +40,32 @@ private:
   ::omx_interfaces::srv::GenerateTrajectory_Request msg_;
 };
 
-class Init_GenerateTrajectory_Request_joint_names
+class Init_GenerateTrajectory_Request_qf
 {
 public:
-  explicit Init_GenerateTrajectory_Request_joint_names(::omx_interfaces::srv::GenerateTrajectory_Request & msg)
+  explicit Init_GenerateTrajectory_Request_qf(::omx_interfaces::srv::GenerateTrajectory_Request & msg)
   : msg_(msg)
   {}
-  Init_GenerateTrajectory_Request_duration joint_names(::omx_interfaces::srv::GenerateTrajectory_Request::_joint_names_type arg)
+  Init_GenerateTrajectory_Request_ts qf(::omx_interfaces::srv::GenerateTrajectory_Request::_qf_type arg)
   {
-    msg_.joint_names = std::move(arg);
-    return Init_GenerateTrajectory_Request_duration(msg_);
+    msg_.qf = std::move(arg);
+    return Init_GenerateTrajectory_Request_ts(msg_);
   }
 
 private:
   ::omx_interfaces::srv::GenerateTrajectory_Request msg_;
 };
 
-class Init_GenerateTrajectory_Request_waypoints
+class Init_GenerateTrajectory_Request_qi
 {
 public:
-  Init_GenerateTrajectory_Request_waypoints()
+  Init_GenerateTrajectory_Request_qi()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_GenerateTrajectory_Request_joint_names waypoints(::omx_interfaces::srv::GenerateTrajectory_Request::_waypoints_type arg)
+  Init_GenerateTrajectory_Request_qf qi(::omx_interfaces::srv::GenerateTrajectory_Request::_qi_type arg)
   {
-    msg_.waypoints = std::move(arg);
-    return Init_GenerateTrajectory_Request_joint_names(msg_);
+    msg_.qi = std::move(arg);
+    return Init_GenerateTrajectory_Request_qf(msg_);
   }
 
 private:
@@ -83,7 +83,7 @@ template<>
 inline
 auto build<::omx_interfaces::srv::GenerateTrajectory_Request>()
 {
-  return omx_interfaces::srv::builder::Init_GenerateTrajectory_Request_waypoints();
+  return omx_interfaces::srv::builder::Init_GenerateTrajectory_Request_qi();
 }
 
 }  // namespace omx_interfaces

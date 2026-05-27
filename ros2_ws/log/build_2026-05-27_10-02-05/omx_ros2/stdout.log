@@ -1,0 +1,24 @@
+running egg_info
+writing ../../build/omx_ros2/omx_ros2.egg-info/PKG-INFO
+writing dependency_links to ../../build/omx_ros2/omx_ros2.egg-info/dependency_links.txt
+writing entry points to ../../build/omx_ros2/omx_ros2.egg-info/entry_points.txt
+writing requirements to ../../build/omx_ros2/omx_ros2.egg-info/requires.txt
+writing top-level names to ../../build/omx_ros2/omx_ros2.egg-info/top_level.txt
+reading manifest file '../../build/omx_ros2/omx_ros2.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/omx_ros2/omx_ros2.egg-info/SOURCES.txt'
+running build
+running build_py
+copying omx_ros2/trajectory_generator_node.py -> /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/build/lib/omx_ros2
+running install
+running install_lib
+byte-compiling /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2/trajectory_generator_node.py to trajectory_generator_node.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/omx_ros2/omx_ros2.egg-info to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/python3.12/site-packages/omx_ros2-0.0.0-py3.12.egg-info
+running install_scripts
+Installing omx_driver_node script to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2
+Installing task_supervisor_node script to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2
+Installing trajectory_generator_node script to /home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/install/omx_ros2/lib/omx_ros2
+writing list of installed files to '/home/robot/Documents/Grupo_pvsc_alas4_lopt_iams/Robotic_Arny/ros2_ws/build/omx_ros2/install.log'

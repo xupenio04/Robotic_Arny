@@ -78,24 +78,22 @@ class OmxDriverNode(Node):
 
     def execute_trajectory_callback(self, request, response):
         try:
-            traj_msg: JointTrajectory = request.trajectory
-            ts = request.ts
+            traj_msg = request.trajectory
 
             if not traj_msg.points:
-                self.get_logger().warn('Trajetória vazia recebida.')
                 response.success = False
                 return response
 
             traj = [list(p.positions) for p in traj_msg.points]
 
-            self.get_logger().info(
-                f'Executando trajetória com {len(traj)} pontos, ts={ts}s.'
-            )
+            # Extrai time_from_start de cada ponto em segundos
+            time_from_start = [
+                p.time_from_start.sec + p.time_from_start.nanosec * 1e-9
+                for p in traj_msg.points
+            ]
 
-            self.driver.execute_trajectory(traj, ts)
-
+            self.driver.execute_trajectory(traj, time_from_start)
             response.success = True
-            self.get_logger().info('Trajetória executada com sucesso.')
 
         except Exception as e:
             self.get_logger().error(f'Erro na execução: {e}')
