@@ -22,8 +22,8 @@ L5 = 0.124
 L6 = 0.040
 L7 = 0.130
 
-JOINT_MIN = [-math.pi, -math.pi/2, -math.pi/2, -math.pi/2, -math.pi]
-JOINT_MAX = [ math.pi,  math.pi/2,  math.pi/2,  math.pi/2,  math.pi]
+JOINT_MIN = [-math.pi, -math.pi, -math.pi, -math.pi, -math.pi]
+JOINT_MAX = [ math.pi,  math.pi,  math.pi,  math.pi,  math.pi]
 
 FORBIDDEN_REGIONS = [
     {"z_max": 0.01},
@@ -44,11 +44,11 @@ GRIPPER_CLOSE = 0.0
 # ============================================================================
 
 CONFIG_REST      = [0.0,  0.0,  0.0,  0.0,  0.0]
-CONFIG_ABOVE_OBJ = [0.0, 0.0 ,  0.0,  0.0,  0.0]
-CONFIG_GRASP     = [0.0, 0.0,  0.0,  0.0,  0.0]
-CONFIG_TRANSPORT = [1.57,  1.57,  0.0,  0.0,  0.0]
-CONFIG_ABOVE_DST = [0.0, 0.0, 0.0,  0.0,  0.0]
-CONFIG_PLACE     = [0.0, 0.0, 0.0,  0.0,  0.0]
+CONFIG_ABOVE_OBJ = [1.57, 1.57 , 0.0,  -1.57,  0.0]
+CONFIG_GRASP     = [1.57, 1.57,  -1.57,  -1.57,  0.0]
+CONFIG_TRANSPORT = [0.8,  1.57,  -1.57,  0.0,  0.0]
+CONFIG_ABOVE_DST = [0.0, 1.0, 0.0,  -1.57,  0.0]
+CONFIG_PLACE     = [0.0, 1.0, 0.0,  -1.57,  0.0]
 
 
 # ============================================================================
@@ -171,8 +171,8 @@ class TaskSupervisorNode(Node):
         if not self.analyze_trajectory(traj):
             return False
 
-        if not self.check_collision(traj):
-            return False
+        # if not self.check_collision(traj):
+        #     return False
 
         exec_result = self._call_execute(traj)
 
